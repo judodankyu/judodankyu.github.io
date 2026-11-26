@@ -15,10 +15,11 @@ Read these before changing anything substantial:
 ## Commands
 
 ```sh
-bun install          # once
+bun install          # once; also turns on the git hooks
 bun run dev          # local preview with live reload
 bun run typecheck    # TypeScript strict check (must pass)
 bun run build        # production site in dist/
+bun run check        # scan all files and commit messages for sensitive data
 ```
 
 Requires [Bun](https://bun.sh). There are no other dependencies besides TypeScript.
@@ -32,6 +33,9 @@ Requires [Bun](https://bun.sh). There are no other dependencies besides TypeScri
 | `src/main.ts` | Renders the chart, grade tabs, grade lists, search, active-tab tracking. |
 | `src/styles.css` | All styles: modern CSS (`@layer`, nesting, `light-dark()`, container queries). |
 | `.github/workflows/deploy.yml` | Builds with Bun and publishes `dist/` to GitHub Pages on every push to `main`. |
+| `.github/workflows/security.yml` | Security checks on every push and pull request. |
+| `scripts/check-sensitive.ts`, `.githooks/` | The sensitive-data check and the git hooks that run it. |
+| `.claude/` | `CLAUDE.md` (imports this file) and `settings.json` (declares the design skills). |
 | `dist/` | Build output. Never edit or commit it. |
 
 No framework, no runtime dependencies, no server. Keep it that way unless there is a strong reason.
@@ -65,7 +69,7 @@ No framework, no runtime dependencies, no server. Keep it that way unless there 
 
 ## Quality bar (check before every push)
 
-1. `bun run typecheck` and `bun run build` pass.
+1. `bun run check`, `bun run typecheck` and `bun run build` pass.
 2. Look at the page at phone (390px), tablet and desktop widths, in light and dark mode. All seven grade tabs fit on one row on a phone.
 3. Search works for romaji, kanji and English (for example "seoi", "絞", "strangle"); Esc clears it; "/" focuses it.
 4. Accessibility (WCAG 2.2 AA): heading order h1 → h2 (age stage) → h3 (grade) → h4 (technique group) with no skipped levels; text contrast at least 4.5:1; touch targets at least 24px (tabs are 44px tall); every link has a meaningful name.
@@ -76,6 +80,14 @@ No framework, no runtime dependencies, no server. Keep it that way unless there 
 - Commit to `main` only when the checks pass; the push publishes the site.
 - Keep changes small and focused; one concern per commit.
 - After visual changes, keep `DESIGN.md` in step with the built code.
+
+## Security checks
+
+- `bun install` turns on the git hooks in `.githooks/`. Before each commit they run `scripts/check-sensitive.ts` (secrets, local file paths, local or private addresses, private Claude links, personal emails, credential files, files over 500 KB, plain http links, video ID format) and the typecheck; the commit message gets the same check. `bun run check` scans every file and every commit message.
+- Never commit secrets, `.env` files, personal emails or links to private sessions. Use your `users.noreply.github.com` address as your git email.
+- GitHub runs the same checks on every push and pull request (`.github/workflows/security.yml`), plus a TruffleHog secret scan and dependency review. Dependabot proposes action and package updates weekly.
+- All page text goes through the `html` template in `src/main.ts`, which escapes it; never assign unescaped strings to `innerHTML`. The Content-Security-Policy in `index.html` allows only this site's files and Google Fonts: add a source there before using any new external resource.
+- A line that is safe but trips the checker can end with `sensitive-check: allow` and a reason. Do not use `--no-verify`.
 
 ## Design skills
 
