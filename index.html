@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="What each judo grade asks for, from yellow belt to 2nd dan, following the IJF Belt Grades Guide 2026, with the official Kodokan video for every technique.">
+<title>Judo Belt Grades Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the techniques</a>
+
+<!-- Shared paint: soft wash edges and mist, used by the landscape and section openers. -->
+<svg class="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="wash" x="-20%" y="-30%" width="140%" height="160%"><feTurbulence type="fractalNoise" baseFrequency=".008" numOctaves="4" seed="21"/><feDisplacementMap in="SourceGraphic" scale="26"/><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="wash-soft" x="-20%" y="-30%" width="140%" height="160%"><feTurbulence type="fractalNoise" baseFrequency=".006" numOctaves="2" seed="21"/><feDisplacementMap in="SourceGraphic" scale="18"/><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="mist" x="-30%" y="-120%" width="160%" height="340%"><feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="40"/><feGaussianBlur stdDeviation="14"/></filter>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--mtn-far);stop-opacity:.75"/><stop offset="1" style="stop-color:var(--mtn-far);stop-opacity:0"/></linearGradient>
+    <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--mtn-mid);stop-opacity:.8"/><stop offset=".7" style="stop-color:var(--mtn-mid);stop-opacity:.12"/><stop offset="1" style="stop-color:var(--mtn-mid);stop-opacity:0"/></linearGradient>
+    <linearGradient id="near" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--mtn-near);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--mtn-near);stop-opacity:0"/></linearGradient>
+  </defs>
+</svg>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Judo belt grades</a>
+    <nav class="tabs" id="tabs" aria-label="Grades"></nav>
+    <div class="search">
+      <label class="sr-only" for="q">Search techniques</label>
+      <input id="q" type="search" placeholder="Search by name, kanji or meaning" autocomplete="off" spellcheck="false" aria-describedby="status" aria-keyshortcuts="/">
+      <p class="status" id="status" role="status"></p>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="intro">
+    <h1>Judo belt grades</h1>
+    <p class="jp" lang="ja">柔道 段級位</p>
+    <p class="lede">What each grade asks for, from yellow belt to 2nd dan. Every technique opens its official Kodokan video.</p>
+    <p class="source">Follows the <a href="https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2026/03/BeltGradesGuide_2026v12-177270-1772700594.pdf" target="_blank" rel="noopener">IJF Belt Grades Guide 2026</a>.</p>
+  </div>
+
+  <figure class="chart">
+    <svg class="land" viewBox="600 120 840 520" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <g filter="url(#wash)"><path d="M600 470 C680 380 720 300 780 250 C820 290 850 330 900 300 C960 240 1000 170 1060 150 C1110 200 1150 260 1210 240 C1260 210 1320 190 1440 230 V520 H600Z" fill="url(#far)"/></g>
+      <g filter="url(#wash)"><path d="M600 560 C700 470 770 420 840 380 C890 410 920 440 980 410 C1040 370 1090 330 1150 350 C1220 380 1290 330 1440 360 V600 H600Z" fill="url(#mid)"/></g>
+      <g filter="url(#wash)"><path d="M980 600 C1080 520 1180 480 1300 470 C1360 466 1400 480 1440 470 V640 H980Z" fill="url(#near)"/></g>
+      <g class="mist-fill" filter="url(#mist)"><ellipse cx="900" cy="520" rx="380" ry="34"/><ellipse cx="1220" cy="440" rx="260" ry="26" opacity=".85"/><ellipse cx="760" cy="430" rx="180" ry="22" opacity=".8"/></g>
+    </svg>
+    <ol class="cols" id="cols"></ol>
+    <svg class="drift" viewBox="0 0 700 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <g class="mist-fill" filter="url(#mist)"><ellipse cx="420" cy="32" rx="240" ry="12" opacity=".45"/><ellipse cx="300" cy="70" rx="220" ry="8" opacity=".35"/></g>
+    </svg>
+    <figcaption>Each belt’s length is how many of the 100 Kodokan techniques you know by that grade. Kyu grades count down from 5th to 1st; dan grades are black belts.</figcaption>
+  </figure>
+</section>
+
+<main id="main"></main>
+
+<p class="empty" id="empty" hidden>No technique matches “<span id="empty-term"></span>”. Try the romaji, the kanji, or the English meaning.</p>
+
+<footer class="foot">
+  <p>Grade requirements follow the <a href="https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2026/03/BeltGradesGuide_2026v12-177270-1772700594.pdf" target="_blank" rel="noopener">IJF Belt Grades Guide 2026</a>. Videos from the Kodokan’s <a href="https://www.kodokan.org/en/techniques/names-of-judo-techniques/" target="_blank" rel="noopener">Names of Judo Techniques</a>; kata from the <a href="https://www.kodokan.org/en/techniques/kata/textbook/" target="_blank" rel="noopener">Kodokan kata textbook</a>.</p>
+  <p>Practise every technique under a qualified instructor.</p>
+</footer>
+
+<script type="module" src="./src/main.ts"></script>
+</body>
+</html>

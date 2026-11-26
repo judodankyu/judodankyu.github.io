@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-26T23:08:40.554922+00:00",
+  "title": "Design System: Judo Belt Grades Guide",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "sumi-ink": {
+        "role": "neutral",
+        "displayName": "Sumi Ink",
+        "canonical": "#1f1f1f",
+        "oklch": "oklch(23.9% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "mist-grey": {
+        "role": "neutral",
+        "displayName": "Mist Grey",
+        "canonical": "#666666",
+        "oklch": "oklch(51.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e6e6e6",
+        "oklch": "oklch(92.5% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "ai-indigo": {
+        "role": "primary",
+        "displayName": "Ai Indigo",
+        "canonical": "#1f3a68",
+        "oklch": "oklch(35.3% 0.087 260.4)",
+        "tonalRamp": [
+          "#000925",
+          "#0e254b",
+          "#2a4471",
+          "#4f678d",
+          "#778aaa",
+          "#a0afc7",
+          "#c8d2e2",
+          "#e9eff8"
+        ]
+      },
+      "warning-red": {
+        "role": "error",
+        "displayName": "Warning Red",
+        "canonical": "#b3261e",
+        "oklch": "oklch(50.1% 0.178 28.7)",
+        "tonalRamp": [
+          "#260000",
+          "#530000",
+          "#830d0a",
+          "#b52b22",
+          "#d36154",
+          "#ee9183",
+          "#ffbbb0",
+          "#ffdfd5"
+        ]
+      },
+      "distant-blue-grey": {
+        "role": "scene",
+        "displayName": "Distant Blue Grey",
+        "canonical": "#b9c8d2",
+        "oklch": "oklch(82.4% 0.022 236.8)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#242728",
+          "#414649",
+          "#60676c",
+          "#818b92",
+          "#a3b0b9",
+          "#c5d3dd",
+          "#e4f1f9"
+        ]
+      },
+      "ridge-green": {
+        "role": "scene",
+        "displayName": "Ridge Green",
+        "canonical": "#8fa9a4",
+        "oklch": "oklch(71.3% 0.030 182.5)",
+        "tonalRamp": [
+          "#080c0b",
+          "#212827",
+          "#3c4846",
+          "#596a67",
+          "#788f8a",
+          "#9bb4af",
+          "#c1d6d2",
+          "#e1f3ef"
+        ]
+      },
+      "near-slope-green": {
+        "role": "scene",
+        "displayName": "Near Slope Green",
+        "canonical": "#6f8f86",
+        "oklch": "oklch(62.3% 0.038 175.9)",
+        "tonalRamp": [
+          "#060d0b",
+          "#1c2a26",
+          "#364a44",
+          "#536c65",
+          "#719188",
+          "#9ab5ad",
+          "#c0d7d0",
+          "#e1f3ee"
+        ]
+      },
+      "evening-ground": {
+        "role": "neutral",
+        "displayName": "Evening Ground",
+        "canonical": "#14171a",
+        "oklch": "oklch(20.3% 0.008 248.2)",
+        "tonalRamp": [
+          "#090b0e",
+          "#24272a",
+          "#434548",
+          "#646668",
+          "#88898b",
+          "#adaeaf",
+          "#d0d1d2",
+          "#eeeeef"
+        ]
+      },
+      "evening-ink": {
+        "role": "neutral",
+        "displayName": "Evening Ink",
+        "canonical": "#e9eaeb",
+        "oklch": "oklch(93.7% 0.002 247.8)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#89898a",
+          "#adaeaf",
+          "#d0d1d2",
+          "#edeeef"
+        ]
+      },
+      "evening-mist-grey": {
+        "role": "neutral",
+        "displayName": "Evening Mist Grey",
+        "canonical": "#a2a8ad",
+        "oklch": "oklch(72.8% 0.010 242.9)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#252728",
+          "#434548",
+          "#63676a",
+          "#858a8e",
+          "#a9afb4",
+          "#cdd2d6",
+          "#ebeff3"
+        ]
+      },
+      "evening-hairline": {
+        "role": "neutral",
+        "displayName": "Evening Hairline",
+        "canonical": "#2a2f34",
+        "oklch": "oklch(30.2% 0.011 248.2)",
+        "tonalRamp": [
+          "#080c0f",
+          "#22272c",
+          "#41464a",
+          "#63676b",
+          "#86898d",
+          "#acaeb0",
+          "#d0d1d2",
+          "#edeeef"
+        ]
+      },
+      "evening-indigo": {
+        "role": "neutral",
+        "displayName": "Evening Indigo",
+        "canonical": "#9db4e0",
+        "oklch": "oklch(76.8% 0.068 263.2)",
+        "tonalRamp": [
+          "#090b10",
+          "#212731",
+          "#3c4557",
+          "#596680",
+          "#7889ab",
+          "#98aed9",
+          "#bdd2f9",
+          "#ddefff"
+        ]
+      },
+      "belt-yellow": {
+        "role": "belt",
+        "displayName": "Belt Yellow",
+        "canonical": "#efb800",
+        "oklch": "oklch(81.0% 0.166 86.8)",
+        "tonalRamp": [
+          "#100a02",
+          "#2f250d",
+          "#554213",
+          "#7e6215",
+          "#aa8314",
+          "#d7a60b",
+          "#fdc944",
+          "#ffe97f"
+        ]
+      },
+      "belt-orange": {
+        "role": "belt",
+        "displayName": "Belt Orange",
+        "canonical": "#e5741a",
+        "oklch": "oklch(67.8% 0.167 51.8)",
+        "tonalRamp": [
+          "#190500",
+          "#401a00",
+          "#6d3202",
+          "#9d4c0a",
+          "#d06815",
+          "#f7904b",
+          "#ffb983",
+          "#ffdbae"
+        ]
+      },
+      "belt-green": {
+        "role": "belt",
+        "displayName": "Belt Green",
+        "canonical": "#2e8b4f",
+        "oklch": "oklch(56.7% 0.127 151.6)",
+        "tonalRamp": [
+          "#001102",
+          "#003012",
+          "#0e532a",
+          "#247843",
+          "#4d9d65",
+          "#80bf90",
+          "#ade0b9",
+          "#d3fbdb"
+        ]
+      },
+      "belt-blue": {
+        "role": "belt",
+        "displayName": "Belt Blue",
+        "canonical": "#1f5cb4",
+        "oklch": "oklch(48.7% 0.153 258.4)",
+        "tonalRamp": [
+          "#00062c",
+          "#002259",
+          "#0d418a",
+          "#2963b9",
+          "#598ad2",
+          "#88b0eb",
+          "#b4d3ff",
+          "#d9f0ff"
+        ]
+      },
+      "belt-brown": {
+        "role": "belt",
+        "displayName": "Belt Brown",
+        "canonical": "#6e4426",
+        "oklch": "oklch(42.9% 0.073 54.9)",
+        "tonalRamp": [
+          "#190500",
+          "#3b1e07",
+          "#613a1e",
+          "#835c42",
+          "#a3816b",
+          "#c3a896",
+          "#e1cdc0",
+          "#faebe2"
+        ]
+      },
+      "belt-black": {
+        "role": "belt",
+        "displayName": "Belt Black",
+        "canonical": "#1c1c1c",
+        "oklch": "oklch(22.6% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page title only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Age-stage titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Grade headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Technique names and meanings, lede."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Glosses, counts, tabs, captions, Watch."
+      },
+      "kanji": {
+        "displayName": "Kanji",
+        "purpose": "Technique kanji in rows."
+      }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "40rem"
+      },
+      {
+        "name": "stack-hero",
+        "value": "60rem"
+      },
+      {
+        "name": "stack-rows (container)",
+        "value": "46rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Grade tab",
+      "kind": "nav",
+      "refersTo": "grade-tab",
+      "description": "Plain-word grade tab; the current grade is underlined in its belt colour.",
+      "html": "<nav class=\"ds-tabs\"><a class=\"ds-tab\" href=\"#\">Yellow</a><a class=\"ds-tab ds-tab-current\" href=\"#\" style=\"--mark:#1f5cb4\">Blue</a><a class=\"ds-tab\" href=\"#\">1st dan</a></nav>",
+      "css": ".ds-tabs{display:flex;gap:1.25rem;font:400 .875rem 'Zen Kaku Gothic New',system-ui,sans-serif}.ds-tab{display:grid;align-items:center;min-height:44px;color:#666;text-decoration:none}.ds-tab:hover{color:#1f1f1f}.ds-tab:focus-visible{outline:2px solid #1f3a68;outline-offset:2px}.ds-tab-current{color:#1f1f1f;font-weight:700;box-shadow:inset 0 -3px 0 var(--mark)}"
+    },
+    {
+      "name": "Search field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Technique search with a live match count inside the right edge.",
+      "html": "<label class=\"ds-search\"><input placeholder=\"Search by name, kanji or meaning\" value=\"gaeshi\"><span>12 matches</span></label>",
+      "css": ".ds-search{position:relative;display:block;max-width:18rem;font:400 .9375rem 'Zen Kaku Gothic New',system-ui,sans-serif}.ds-search input{width:100%;padding:8px 6rem 8px 12px;border:1px solid #e6e6e6;border-radius:6px;background:#fff;color:#1f1f1f;font:inherit}.ds-search input:focus-visible{outline:2px solid #1f3a68;outline-offset:0;border-color:#1f3a68}.ds-search span{position:absolute;right:12px;top:50%;translate:0 -50%;font-size:.8125rem;color:#666}"
+    },
+    {
+      "name": "Technique row",
+      "kind": "custom",
+      "refersTo": "technique-row",
+      "description": "One technique; the whole row links to the Kodokan video.",
+      "html": "<a class=\"ds-row\" href=\"#\"><span class=\"ds-n\">1</span><b>Tai-otoshi</b><span class=\"ds-k\">体落</span><span>Body drop</span><span class=\"ds-t\">Te-waza hand</span><span class=\"ds-w\">Watch</span></a>",
+      "css": ".ds-row{display:grid;grid-template-columns:2.5rem 10rem 4rem 1fr 7rem 3rem;align-items:baseline;gap:1rem;padding:10px 8px;border-block:1px solid #e6e6e6;color:#1f1f1f;text-decoration:none;font:400 1rem/1.6 'Zen Kaku Gothic New',system-ui,sans-serif}.ds-row:hover{background:#f6f7f7}.ds-row:hover .ds-w{text-decoration:underline}.ds-row:focus-visible{outline:2px solid #1f3a68;outline-offset:-2px}.ds-n,.ds-t{font-size:.875rem;color:#666}.ds-k{font:500 1.25rem 'Shippori Mincho',serif}.ds-w{justify-self:end;font-size:.875rem;color:#1f3a68}"
+    },
+    {
+      "name": "Grade heading",
+      "kind": "custom",
+      "refersTo": "belt-swatch",
+      "description": "Belt swatch, grade name in Mincho, gloss with grade and count.",
+      "html": "<div class=\"ds-gh\"><span class=\"ds-sw\"></span><h3>1st dan <small><span lang=\"ja\">初段</span> Shodan, 14 techniques</small></h3></div>",
+      "css": ".ds-gh{display:flex;align-items:center;gap:.875rem}.ds-sw{width:40px;height:12px;border-radius:3px;background:#1c1c1c}.ds-gh h3{margin:0;font:700 1.375rem/1.3 'Shippori Mincho',serif;color:#1f1f1f}.ds-gh small{margin-left:.375rem;font:400 .875rem 'Zen Kaku Gothic New',sans-serif;color:#666}"
+    },
+    {
+      "name": "Chart belt",
+      "kind": "custom",
+      "refersTo": "belt-swatch",
+      "description": "One belt in the opening chart, rising from the ground line; length is techniques known.",
+      "html": "<a class=\"ds-col\" href=\"#\"><span class=\"ds-plot\"><span style=\"height:52%;background:#1f5cb4\"></span></span><b>52</b><span>Blue</span></a>",
+      "css": ".ds-col{display:grid;grid-template-rows:10rem auto auto;justify-items:center;width:5rem;text-decoration:none;color:#1f1f1f;font:400 .875rem 'Zen Kaku Gothic New',sans-serif}.ds-col>span:last-child{color:#666}.ds-col:hover>span:last-child{text-decoration:underline;color:#1f1f1f}.ds-plot{position:relative;width:100%;border-bottom:1px solid #e6e6e6}.ds-plot span{position:absolute;bottom:0;left:50%;width:2.5rem;translate:-50% 0;border-radius:5px 5px 0 0;opacity:.92}.ds-col b{margin-top:.5rem}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Mountains in Morning Mist",
+    "overview": "The page is a sheet of white paper with a landscape painted at its head in the manner of Hashimoto Gahō, the Meiji painter who carried the Kanō school into modern Nihonga. Distant ridges in pale blue-grey and blue-green dissolve downward into white; the mist is not painted, it is the paper left bare. The seven belts stand in that landscape as the only saturated colour, rising from a ground line to show how many of the 100 Kodokan techniques each grade has learned.\n\nEverything below the opening scene is a calm reference document: English first, Japanese terms leading each technique group, Kodokan kanji set in a brush-like Mincho, hairline rules between rows, and no decoration that does not help someone find a technique. The world owns the frame (the opening scene, the section openers, the display type); the reading column stays plain.\n\nThe audience is worldwide, so English carries the page and Japanese is a quiet companion, never the headline.",
+    "keyCharacteristics": [
+      "White paper ground; mist as negative space, never as a tinted fill.",
+      "Belt colours are the only strong colour on the page.",
+      "Mincho display type, Gothic reading type, kanji in Mincho.",
+      "Hairlines, not boxes; no cards, no shadows.",
+      "Atmosphere at the head of each age stage, quiet everywhere else."
+    ],
+    "rules": [
+      {
+        "name": "The Bare Paper Rule",
+        "body": "The ground is pure white (or Evening Ground). Mist is the ground showing through, never a tint laid over it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Belts-Only Rule",
+        "body": "No saturated colour appears on the page except belt colours. Links stay Ai Indigo; nothing else competes with the belts.",
+        "section": "colors"
+      },
+      {
+        "name": "The English-First Rule",
+        "body": "English leads every heading and title. Japanese appears as a quieter secondary line or gloss (柔道 段級位 under the title; 初段 Shodan beside \"1st dan\"), never larger than the English it accompanies.",
+        "section": "typography"
+      },
+      {
+        "name": "The Number-First Rule",
+        "body": "Every grade is named by its number first: \"5th kyu\" … \"1st kyu\", \"1st dan\", \"2nd dan\". The belt colour already shows which belt, so the colour name is the quieter gloss (\"Yellow belt\"), and dan grades carry their Japanese name instead (初段 Shodan).",
+        "section": "typography"
+      },
+      {
+        "name": "The Japanese-Term-Leads Rule",
+        "body": "Inside a grade, technique groups are named by their Kodokan term first (Nage-waza) with the English gloss after it in Mist Grey (throws).",
+        "section": "typography"
+      },
+      {
+        "name": "The Atmosphere-Not-Shadow Rule",
+        "body": "Depth comes from wash and mist, never from box-shadow or elevation.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep the ground pure white (or Evening Ground) and let mist be the ground showing through.",
+      "**Do** keep belt colours as the only saturated colour on the page.",
+      "**Do** lead with English, and put Japanese in quieter secondary lines and glosses.",
+      "**Do** name grades by number first (\"5th kyu\"), with the colour as the gloss.",
+      "**Do** name technique groups by Kodokan term first, English gloss after.",
+      "**Do** keep painted atmosphere to the opening scene and the stage openers; rows stay plain.",
+      "**Do** credit the source as \"Follows the IJF Belt Grades Guide 2026\", linked to the PDF."
+    ],
+    "donts": [
+      "**Don't** add ornament motifs (pines, rocks, gold clouds, seals, wooden plates, belt stitching). The user removed each of these; restraint is the style.",
+      "**Don't** tint the background or add warm glows.",
+      "**Don't** let Japanese titles outweigh the English for a worldwide audience.",
+      "**Don't** use IJF or Kodokan logos or imply endorsement.",
+      "**Don't** animate the chart into existence; its values must be visible without motion.",
+      "**Don't** use shadows, cards, gradients on belts, or the Rising Sun ray motif."
+    ]
+  }
+}
