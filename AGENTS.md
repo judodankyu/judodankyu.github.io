@@ -54,8 +54,8 @@ No framework, no runtime dependencies, no server. Keep it that way unless there 
 
 ## Design rules (summary of DESIGN.md)
 
-- **English first.** Japanese appears as quieter secondary text (柔道 段級位 under the title, 初段 Shodan beside "1st dan"), never larger than the English.
-- **Grade number first.** Grades are named "5th kyu" … "1st kyu", "1st dan", "2nd dan"; the belt colour ("Yellow belt") is the gloss, because the belt itself already shows the colour.
+- **English first.** Japanese appears as quieter secondary text (柔道 段級位 under the title, 五級 Gokyu beside "5th kyu", 初段 Shodan beside "1st dan"), never larger than the English.
+- **Grade number first.** Grades are named "5th kyu" … "1st kyu", "1st dan", "2nd dan"; the gloss is the Japanese name plus, for kyu grades, the colour ("五級 Gokyu, yellow belt"), because the belt itself already shows the colour.
 - **Japanese term leads technique groups:** "Nage-waza" first, "throws" after in grey.
 - **White paper ground** (evening ground in dark mode). No background tints or warm glows. Mist is the page ground showing through.
 - **Belt colours are the only saturated colour.** Links are indigo; nothing else competes.

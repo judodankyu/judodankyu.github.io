@@ -27,11 +27,12 @@ const grade = (b: Belt) => b.grade.replace(/Kyu|Dan/, (w) => w.toLowerCase());
 const sentence = (s: string) => s.charAt(0) + s.slice(1).toLowerCase();
 /** Every grade is named by its number first ("5th kyu", "1st dan"); the belt colour already shows which belt. */
 const title = (b: Belt) => grade(b);
-/** Secondary name: the belt colour for kyu grades, the Japanese name for dan grades. */
+const isKyu = (b: Belt) => !b.id.startsWith("black");
+/** Secondary name: the Japanese name, plus the belt colour for kyu grades. */
 const subtitle = (b: Belt) =>
-  b.japanese ? html`<span lang="ja">${b.japanese.kanji}</span> ${b.japanese.romaji}` : sentence(b.name);
+  html`<span lang="ja">${b.japanese.kanji}</span> ${b.japanese.romaji}${isKyu(b) ? `, ${shortName(b).toLowerCase()} belt` : ""}`;
 /** Plain-text description with the colour, for tooltips and screen readers. */
-const describe = (b: Belt) => (b.japanese ? `${grade(b)}, ${b.japanese.romaji}` : `${grade(b)}, ${shortName(b).toLowerCase()} belt`);
+const describe = (b: Belt) => `${grade(b)}, ${b.japanese.romaji}${isKyu(b) ? `, ${shortName(b).toLowerCase()} belt` : ""}`;
 
 /* Hero chart: one belt per grade rising from the ground line; its length = techniques known by that grade. */
 function chart(): Html[] {
@@ -42,7 +43,7 @@ function chart(): Html[] {
         <span class="plot"><span class="obi" style="--h:${(known / TOTAL) * 100}%"></span></span>
         <span class="count">${known}</span>
         <span class="name">${grade(b)}</span>
-        <span class="sr-only">${b.japanese ? "" : ` ${shortName(b).toLowerCase()} belt`}: ${known} of ${TOTAL} techniques known by this grade</span>
+        <span class="sr-only">${isKyu(b) ? ` ${shortName(b).toLowerCase()} belt` : ""}: ${known} of ${TOTAL} techniques known by this grade</span>
       </a></li>`;
     });
 }

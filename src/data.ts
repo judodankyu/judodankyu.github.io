@@ -17,8 +17,8 @@ export interface Belt {
   grade: string;
   techniques: readonly Technique[];
   kata?: Kata;
-  /** Japanese name of a dan grade, e.g. 初段 Shodan. */
-  japanese?: { kanji: string; romaji: string };
+  /** Japanese name of the grade, e.g. 五級 Gokyu, 初段 Shodan. */
+  japanese: { kanji: string; romaji: string };
 }
 
 export interface Group {
@@ -62,7 +62,7 @@ export const GROUPS: readonly Group[] = [
   {
     label: "Fundamental judo", age: "Up to 10 years", belts: [
       {
-        id: "yellow", name: "Yellow Belt", grade: "5th Kyu", techniques: [
+        id: "yellow", name: "Yellow Belt", grade: "5th Kyu", japanese: { kanji: "五級", romaji: "Gokyu" }, techniques: [
           ["Tai-otoshi", "体落", "Body Drop", "te", "4x6S3Q-Ktv8"],
           ["Uki-goshi", "浮腰", "Floating Hip Throw", "koshi", "bPKwtB4lyOQ"],
           ["O-uchi-gari", "大内刈", "Large Inner Reap", "ashi", "0itJFhV9pDQ"],
@@ -74,7 +74,7 @@ export const GROUPS: readonly Group[] = [
         ],
       },
       {
-        id: "orange", name: "Orange Belt", grade: "4th Kyu", techniques: [
+        id: "orange", name: "Orange Belt", grade: "4th Kyu", japanese: { kanji: "四級", romaji: "Yonkyu" }, techniques: [
           ["Seoi-nage", "背負投", "Shoulder Throw", "te", "zIq0xI0ogxk"],
           ["Ippon-seoi-nage", "一本背負投", "One-armed Shoulder Throw", "te", "FQnOlCxo4oI"],
           ["Koshi-guruma", "腰車", "Hip Wheel", "koshi", "SU7Id6uVJ44"],
@@ -90,7 +90,7 @@ export const GROUPS: readonly Group[] = [
         ],
       },
       {
-        id: "green", name: "Green Belt", grade: "3rd Kyu", techniques: [
+        id: "green", name: "Green Belt", grade: "3rd Kyu", japanese: { kanji: "三級", romaji: "Sankyu" }, techniques: [
           ["Uki-otoshi", "浮落", "Floating Drop", "te", "6H5tmncOY4Q"],
           ["Sumi-otoshi", "隅落", "Corner Drop", "te", "lLU9wv52ni0"],
           ["Harai-goshi", "払腰", "Hip Sweep", "koshi", "qTo8HlAAkOo"],
@@ -111,7 +111,7 @@ export const GROUPS: readonly Group[] = [
   {
     label: "Competition judo", age: "11 to 14 years", belts: [
       {
-        id: "blue", name: "Blue Belt", grade: "2nd Kyu", techniques: [
+        id: "blue", name: "Blue Belt", grade: "2nd Kyu", japanese: { kanji: "二級", romaji: "Nikyu" }, techniques: [
           ["Tsubame-gaeshi", "燕返", "Swallow Counter", "ashi", "GwweWqqFB5g"],
           ["O-uchi-gaeshi", "大内返", "Large Inner Reap Counter", "ashi", "dCyZTXyjIXE"],
           ["O-soto-gaeshi", "大外返", "Large Outer Reaping Throw Counter", "ashi", "8ZjM3X_EANo"],
@@ -136,7 +136,7 @@ export const GROUPS: readonly Group[] = [
         kata: { numbers: "21–22", title: "Nage-no-Kata Set 2", description: "Koshi-waza introduction (uki-goshi, harai-goshi). Complete set for judoka over 12 years old.", video: NAGE_NO_KATA_VIDEO },
       },
       {
-        id: "brown", name: "Brown Belt", grade: "1st Kyu", techniques: [
+        id: "brown", name: "Brown Belt", grade: "1st Kyu", japanese: { kanji: "一級", romaji: "Ikkyu" }, techniques: [
           ["Ko-uchi-makikomi", "小内巻込", "Small Inner Wrap-around Throw", "yoko", "_1eygIXLD_w"],
           ["Uchi-makikomi", "内巻込", "Inner Wrap-around", "yoko", "5BowcjduxVc"],
           ["Soto-makikomi", "外巻込", "Outer Wrap-around Throw", "yoko", "bWG9O1BVKtQ"],

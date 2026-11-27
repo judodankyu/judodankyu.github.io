@@ -152,9 +152,9 @@ A neutral ink-and-paper palette, a mountain palette that exists only inside the 
 - **Kanji** (Mincho 500, 1.25rem): technique kanji in rows; group kanji at 1rem in Mist Grey.
 
 ### Named Rules
-**The English-First Rule.** English leads every heading and title. Japanese appears as a quieter secondary line or gloss (柔道 段級位 under the title; 初段 Shodan beside "1st dan"), never larger than the English it accompanies.
+**The English-First Rule.** English leads every heading and title. Japanese appears as a quieter secondary line or gloss (柔道 段級位 under the title; 五級 Gokyu beside "5th kyu", 初段 Shodan beside "1st dan"), never larger than the English it accompanies.
 
-**The Number-First Rule.** Every grade is named by its number first: "5th kyu" … "1st kyu", "1st dan", "2nd dan". The belt colour already shows which belt, so the colour name is the quieter gloss ("Yellow belt"), and dan grades carry their Japanese name instead (初段 Shodan).
+**The Number-First Rule.** Every grade is named by its number first: "5th kyu" … "1st kyu", "1st dan", "2nd dan". The belt colour already shows which belt, so the gloss carries the Japanese name and, for kyu grades, the colour (五級 Gokyu, yellow belt; 初段 Shodan).
 
 **The Japanese-Term-Leads Rule.** Inside a grade, technique groups are named by their Kodokan term first (Nage-waza) with the English gloss after it in Mist Grey (throws).
 
@@ -196,7 +196,7 @@ Belts are rectangles with softly rounded corners (3px; 5px at the top of chart b
 - **Prohibited techniques:** a second line in Warning Red, in words.
 
 ### Grade heading
-- A 40 × 12px belt swatch, then the grade number in Title type and its gloss ("5th kyu" with "Yellow belt, 8 techniques"; "1st dan" with "初段 Shodan, 14 techniques").
+- A 40 × 12px belt swatch, then the grade number in Title type and its gloss ("5th kyu" with "五級 Gokyu, yellow belt, 8 techniques"; "1st dan" with "初段 Shodan, 14 techniques").
 
 ### Opening chart (signature)
 - Seven belts rising from a hairline ground, each a link to its grade; length is techniques known by that grade out of 100. A painted landscape sits behind and a band of mist drifts in front of the taller belts. Count and grade number sit under the line. No animation: the data is visible from the first frame.
