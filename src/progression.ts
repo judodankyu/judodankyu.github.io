@@ -9,7 +9,8 @@ export const PROGRAMME_URL =
 
 /** Belt shown on the step; also the colour of its swatch. */
 export type StepBelt =
-  | "white" | "white-yellow" | "yellow" | "orange" | "orange-green" | "green" | "blue" | "brown" | "black-1" | "black-2";
+  | "white" | "white-yellow" | "yellow" | "yellow-orange" | "orange" | "orange-green" | "green" | "green-blue" | "blue" | "blue-brown"
+  | "brown" | "black-1" | "black-2";
 
 export interface Step {
   id: string;
@@ -116,7 +117,7 @@ export const TRACKS: readonly Track[] = [
   {
     id: "children",
     label: "Children",
-    description: "For children who start young: three white-belt stages, each earning a star, then smaller steps through each colour. (The IJF programme marks the white-belt stages with stripes on the belt.)",
+    description: "For children who start young: three white-belt stages, each earning a star, then a half belt for the first step of each new grade. (The IJF programme marks the white-belt stages with stripes on the belt.)",
     steps: [
       {
         id: "c-white-1", belt: "white", grade: "6th kyu", name: "white belt, 1 star", stars: 1, age: "5 years", minimum: "3 months", stage: "Discovery",
@@ -149,7 +150,7 @@ export const TRACKS: readonly Track[] = [
         examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "3 escapes from osaekomi", "3 osaekomi in sequence"], techniques: "yellow",
       },
       {
-        id: "c-orange-7", belt: "orange", grade: "4th kyu", name: "orange belt", age: "7 years", minimum: "1 year", stage: "Learning",
+        id: "c-orange-7", belt: "yellow-orange", grade: "4th kyu", name: "yellow-orange belt", age: "7 years", minimum: "1 year", stage: "Learning",
         objectives: ORANGE_YOUNG_OBJECTIVES, focus: ["Learning up to 5 throws", "Improving osaekomi, half the holds"],
         exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Tai-sabaki", "Throws on the move", "Sequences from escaping osaekomi"],
         examination: ["Demonstration of 5 nage-no-kata type throws, linked together on the move", ...ORANGE_EXAM.slice(1)], techniques: "orange",
@@ -175,7 +176,7 @@ export const TRACKS: readonly Track[] = [
         examination: [SELF_DEFENCE_STRIKES, "Nage-no-Kata, set 1", "4-throw sequence moving in suri-ashi", "11 consecutive osaekomi with escapes, in sequence"], techniques: "green",
       },
       {
-        id: "c-blue-10", belt: "blue", grade: "2nd kyu", name: "blue belt", age: "10½ years", minimum: "1 year", stage: "Refereeing",
+        id: "c-blue-10", belt: "green-blue", grade: "2nd kyu", name: "green-blue belt", age: "10½ years", minimum: "1 year", stage: "Refereeing",
         objectives: BLUE_OBJECTIVES, focus: ["Learning half of the throws", "Introduction to shime-waza and gatame-waza: technique only, not in randori"],
         exercises: ["Refereeing", "Physical preparation", "Tandoku-renshu", "Tachi-waza and ne-waza sequences"],
         examination: [...BLUE_EXAM_THROWS, "2 shime-waza and 2 gatame-waza in a row"], techniques: "blue",
@@ -187,7 +188,9 @@ export const TRACKS: readonly Track[] = [
         exercises: ["Shiai", "Refereeing practice", "Explaining a technique", "Mondo (questions and answers)", "Tandoku-renshu (tokui-waza)"],
         examination: [...BLUE_EXAM_THROWS, "6 shime-waza and 3 gatame-waza in a row"], techniques: "blue",
       },
-      { ...BROWN, id: "c-brown", age: "13 years", focus: ["Learning half of the throws", "The 10 groundwork techniques of the grade"] },
+      { ...BROWN, id: "c-blue-brown", belt: "blue-brown", name: "blue-brown belt", age: "13 years", focus: ["Learning half of the throws", "The 10 groundwork techniques of the grade"] },
+      // Then the full brown belt, with the programme's "over 13 years" content.
+      { ...BROWN, id: "c-brown", age: "from 13 years", focus: ["Learning all the throws", "The 10 groundwork techniques of the grade"] },
       ...DANS.map((d) => ({ ...d, id: `c-${d.id}` })),
     ],
   },

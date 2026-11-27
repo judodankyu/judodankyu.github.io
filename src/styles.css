@@ -41,7 +41,10 @@
   /* White-belt stages and the children's in-between belt, on the grading pathway. */
   [data-belt="white"]        { --c: #f7f7f5; --mark: light-dark(#a9adb1, #e9eaeb); --edge: light-dark(#b9bdc1, transparent); }
   [data-belt="white-yellow"] { --c: linear-gradient(90deg, #f7f7f5 50%, #efb800 50%); --mark: #efb800; --edge: light-dark(#b9bdc1, transparent); }
+  [data-belt="yellow-orange"] { --c: linear-gradient(90deg, #efb800 50%, #e5741a 50%); --mark: #e5741a; }
   [data-belt="orange-green"] { --c: linear-gradient(90deg, #e5741a 50%, #2e8b4f 50%); --mark: #2e8b4f; }
+  [data-belt="green-blue"]   { --c: linear-gradient(90deg, #2e8b4f 50%, #1f5cb4 50%); --mark: #1f5cb4; }
+  [data-belt="blue-brown"]   { --c: linear-gradient(90deg, #1f5cb4 50%, #6e4426 50%); --mark: #6e4426; }
 }
 
 @layer layout {
@@ -494,7 +497,7 @@
     transition: background-color .3s;
     & > .swatch { position: absolute; left: 1rem; top: 1.5rem; }
     /* Stars earned on the white belt, drawn on its swatch. */
-    & > .swatch:not(:empty) { display: flex; align-items: center; justify-content: center; gap: 1px; font-size: .625rem; line-height: 1; color: #c48f00; }
+    & > .swatch:not(:empty) { display: flex; align-items: center; justify-content: center; gap: 1px; font-size: .625rem; line-height: 1; color: #c62828; }
     & h3 { font: 700 1.375rem/1.3 var(--display); }
   }
 
