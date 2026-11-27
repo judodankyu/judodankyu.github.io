@@ -308,6 +308,8 @@
   }
 
   .pathway-link {
+    display: grid;
+    justify-items: center;
     align-self: center;
     white-space: nowrap;
     font-size: .875rem;
