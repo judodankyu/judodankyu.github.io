@@ -16,7 +16,6 @@
     --ink: light-dark(#1f1f1f, #e9eaeb);
     --muted: light-dark(#666, #a2a8ad);
     --line: light-dark(#e6e6e6, #2a2f34);
-    --hover: light-dark(#f6f7f7, #1b1f23);
     --link: light-dark(#1f3a68, #9db4e0);
     --warn: light-dark(#b3261e, #ff8a80);
     --edge: light-dark(rgb(0 0 0 / .08), rgb(255 255 255 / .22));
@@ -354,7 +353,11 @@
     border-top: 1px solid var(--line);
     text-decoration: none;
 
-    &:hover { background: var(--hover); }
+    /* Hover takes the colour of the belt this technique belongs to. */
+    &:hover, &:focus-visible {
+      background: color-mix(in oklab, var(--mark, var(--ink)) 14%, var(--bg));
+      box-shadow: inset 3px 0 0 var(--mark, var(--ink));
+    }
     &:hover .watch { text-decoration: underline; }
     &:focus-visible { outline-offset: -2px; }
   }

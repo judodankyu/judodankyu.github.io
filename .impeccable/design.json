@@ -391,7 +391,7 @@
       "refersTo": "technique-row",
       "description": "One technique; the whole row links to the Kodokan video.",
       "html": "<a class=\"ds-row\" href=\"#\"><span class=\"ds-n\">1</span><b>Tai-otoshi</b><span class=\"ds-k\">体落</span><span>Body drop</span><span class=\"ds-t\">Te-waza hand</span><span class=\"ds-w\">Watch</span></a>",
-      "css": ".ds-row{display:grid;grid-template-columns:2.5rem 10rem 4rem 1fr 7rem 3rem;align-items:baseline;gap:1rem;padding:10px 8px;border-block:1px solid #e6e6e6;color:#1f1f1f;text-decoration:none;font:400 1rem/1.6 'Zen Kaku Gothic New',system-ui,sans-serif}.ds-row:hover{background:#f6f7f7}.ds-row:hover .ds-w{text-decoration:underline}.ds-row:focus-visible{outline:2px solid #1f3a68;outline-offset:-2px}.ds-n,.ds-t{font-size:.875rem;color:#666}.ds-k{font:500 1.25rem 'Shippori Mincho',serif}.ds-w{justify-self:end;font-size:.875rem;color:#1f3a68}"
+      "css": ".ds-row{display:grid;grid-template-columns:2.5rem 10rem 4rem 1fr 7rem 3rem;align-items:baseline;gap:1rem;padding:10px 8px;border-block:1px solid #e6e6e6;color:#1f1f1f;text-decoration:none;font:400 1rem/1.6 'Zen Kaku Gothic New',system-ui,sans-serif}.ds-row:hover{background:color-mix(in oklab,var(--mark,#1f1f1f) 14%,#fff);box-shadow:inset 3px 0 0 var(--mark,#1f1f1f)}.ds-row:hover .ds-w{text-decoration:underline}.ds-row:focus-visible{outline:2px solid #1f3a68;outline-offset:-2px}.ds-n,.ds-t{font-size:.875rem;color:#666}.ds-k{font:500 1.25rem 'Shippori Mincho',serif}.ds-w{justify-self:end;font-size:.875rem;color:#1f3a68}"
     },
     {
       "name": "Grade heading",
