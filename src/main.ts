@@ -93,12 +93,12 @@ function beltSection(b: Belt): Html {
   const kata = b.kata
     ? html`<div class="family">
         <h4><span class="fam-kanji" lang="ja">形</span>Kata <span class="gloss">forms</span></h4>
-        <ol class="rows"><li><a class="row kata" href="${KATA_URL}" target="_blank" rel="noopener"
+        <ol class="rows"><li><a class="row kata" href="${b.kata.video ? `https://www.youtube.com/watch?v=${encodeURIComponent(b.kata.video)}` : KATA_URL}" target="_blank" rel="noopener"
           data-s="${`${b.kata.title} ${b.kata.description} kata`.toLowerCase()}">
           <span class="num">${b.kata.numbers}</span>
           <span class="romaji">${b.kata.title}</span>
           <span class="english">${b.kata.description}</span>
-          <span class="watch">Open textbook</span>
+          <span class="watch">${b.kata.video ? "Watch" : "Open textbook"}</span>
         </a></li></ol>
       </div>`
     : "";

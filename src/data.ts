@@ -7,6 +7,8 @@ export interface Kata {
   numbers: string;
   title: string;
   description: string;
+  /** Kodokan YouTube video id; without one the row links to the kata textbook. */
+  video?: string;
 }
 
 export interface Belt {
@@ -52,6 +54,10 @@ export const FAMILIES: readonly { id: Family; title: string; term: string; kanji
 export const PROHIBITED: ReadonlySet<string> = new Set(["Kani-basami", "Kawazu-gake", "Do-jime", "Ashi-garami"]);
 
 export const KATA_URL = "https://www.kodokan.org/en/techniques/kata/textbook/";
+/** Kodokan: Nage-no-Kata (English ver.) */
+const NAGE_NO_KATA_VIDEO = "bkhBZzE2HpM";
+/** Kodokan: Katame-no-Kata (English ver.) */
+const KATAME_NO_KATA_VIDEO = "e1eAt15CEMY";
 
 export const GROUPS: readonly Group[] = [
   {
@@ -99,7 +105,7 @@ export const GROUPS: readonly Group[] = [
           ["Ura-gatame", "裏固", "Back Pin", "osae", "eeAHZB0v3XY"],
           ["Ushiro-kesa-gatame", "後袈裟固", "Reverse Scarf Hold", "osae", "SBapox2M2dE"],
         ],
-        kata: { numbers: "13–14", title: "Nage-no-Kata Set 1", description: "Te-waza introduction (uki-otoshi, seoi-nage). Complete set for judoka over 12 years old." },
+        kata: { numbers: "13–14", title: "Nage-no-Kata Set 1", description: "Te-waza introduction (uki-otoshi, seoi-nage). Complete set for judoka over 12 years old.", video: NAGE_NO_KATA_VIDEO },
       },
     ],
   },
@@ -128,7 +134,7 @@ export const GROUPS: readonly Group[] = [
           ["Sode-guruma-jime", "袖車絞", "Sleeve-wheel Strangle", "shime", "E3nvQzClcAU"],
           ["Sankaku-jime", "三角絞", "Triangular Strangle", "shime", "lq1CUBRAm7s"],
         ],
-        kata: { numbers: "21–22", title: "Nage-no-Kata Set 2", description: "Koshi-waza introduction (uki-goshi, harai-goshi). Complete set for judoka over 12 years old." },
+        kata: { numbers: "21–22", title: "Nage-no-Kata Set 2", description: "Koshi-waza introduction (uki-goshi, harai-goshi). Complete set for judoka over 12 years old.", video: NAGE_NO_KATA_VIDEO },
       },
       {
         id: "brown", name: "Brown Belt", grade: "1st Kyu", techniques: [
@@ -155,7 +161,7 @@ export const GROUPS: readonly Group[] = [
           ["Ude-hishigi-ashi-gatame", "腕挫脚固", "Leg Armlock", "kan", "ClY7g_pX-4s"],
           ["Ude-hishigi-sankaku-gatame", "腕挫三角固", "Triangular Armlock", "kan", "WefAmW4azhk"],
         ],
-        kata: { numbers: "23–24", title: "Nage-no-Kata Set 3", description: "Ashi-waza introduction (okuri-ashi-harai, sasae-tsurikomi-ashi). Complete set for judoka over 12 years old." },
+        kata: { numbers: "23–24", title: "Nage-no-Kata Set 3", description: "Ashi-waza introduction (okuri-ashi-harai, sasae-tsurikomi-ashi). Complete set for judoka over 12 years old.", video: NAGE_NO_KATA_VIDEO },
       },
     ],
   },
@@ -178,7 +184,7 @@ export const GROUPS: readonly Group[] = [
           ["Katate-jime", "片手絞", "One-hand Strangle", "shime", "cHeIs-fSqwE"],
           ["Tsukkomi-jime", "突込絞", "Thrusting Strangle", "shime", "dKKpnD3eLcY"],
         ],
-        kata: { numbers: "15–29", title: "Nage-no-Kata, Sets 1–5", description: "Demonstration as Tori & Uke." },
+        kata: { numbers: "15–29", title: "Nage-no-Kata, Sets 1–5", description: "Demonstration as Tori & Uke.", video: NAGE_NO_KATA_VIDEO },
       },
       {
         id: "black-2", name: "Black Belt", grade: "2nd Dan", japanese: { kanji: "二段", romaji: "Nidan" }, techniques: [
@@ -195,7 +201,7 @@ export const GROUPS: readonly Group[] = [
           ["Do-jime", "胴絞", "Trunk Strangle (Body Scissors)", "shime", "D_0fFcoIbvY"],
           ["Ashi-garami", "足緘", "Leg Entanglement", "kan", "BWWb0GoAtZw"],
         ],
-        kata: { numbers: "13–27", title: "Katame-no-Kata, Sets 1–3", description: "Demonstration as Tori & Uke." },
+        kata: { numbers: "13–27", title: "Katame-no-Kata, Sets 1–3", description: "Demonstration as Tori & Uke.", video: KATAME_NO_KATA_VIDEO },
         note: "Based on the 100 Kodokan classified judo techniques, Nage-no-Kata and Katame-no-Kata, including judo basic skills, structured according to Long Term Athlete Development principles.",
       },
     ],

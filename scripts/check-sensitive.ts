@@ -75,6 +75,8 @@ function checkVideoIds(path: string, text: string) {
     if (!/^[A-Za-z0-9_-]{11}$/.test(m[1]!)) report(path, "malformed YouTube video ID", m[0]);
   }
   if (count === 0) report(path, "no techniques found (data format changed?)", "");
+  for (const m of text.matchAll(/_VIDEO = "([^"]*)"/g))
+    if (!/^[A-Za-z0-9_-]{11}$/.test(m[1]!)) report(path, "malformed YouTube video ID", m[0]);
 }
 
 function checkFile(path: string, content: Buffer) {
