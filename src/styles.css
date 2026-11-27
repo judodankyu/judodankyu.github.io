@@ -131,11 +131,13 @@
     & a { color: var(--link); }
   }
 
-  /* Sources side by side; they wrap to one column on narrow screens. */
+  /* Sources side by side: four across, two by two on tablets, stacked on phones. */
   .credits {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem 2rem;
+    @media (width < 60rem) { grid-template-columns: repeat(2, 1fr); }
+    @media (width < 30rem) { grid-template-columns: 1fr; }
     & dt { color: var(--ink); font-weight: 700; }
     & dd { margin: .25rem 0 0; max-width: 34ch; }
   }
