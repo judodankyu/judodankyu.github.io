@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "bun ./index.html",
     "build": "bun build ./index.html --outdir dist --minify",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check": "bun scripts/check-sensitive.ts --all",
+    "prepare": "git config core.hooksPath .githooks"
   },
   "devDependencies": {
     "typescript": "^7.0.2"

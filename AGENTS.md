@@ -79,24 +79,11 @@ No framework, no runtime dependencies, no server. Keep it that way unless there 
 
 ## Design skills
 
-The design was made with two agent skills. They are not stored in this repository; install them in your own tool so your agent works from the same methods. Their context files (`PRODUCT.md`, `DESIGN.md`, `.impeccable/`) are committed, so every collaborator's agent starts from the same decisions.
+The design was made with two agent skills, declared for Claude Code in `.claude/settings.json` (not copied into this repository, so they stay up to date and no third-party code is committed). Their context files (`PRODUCT.md`, `DESIGN.md`, `.impeccable/`) are committed, so every collaborator's agent starts from the same decisions.
 
-### Impeccable
+- **Impeccable** (https://github.com/pbakaus/impeccable): design critique, audit and polish. Use `/impeccable critique`, `/impeccable audit`, `/impeccable polish`; do not run `/impeccable init` again. Without an agent: start `bun run dev`, then `npx impeccable detect <the address it prints>`. Other tools: `npx impeccable install`. It runs hooks after edits and sends anonymous telemetry unless you run `npx impeccable telemetry off`.
+- **frontend-design** (https://github.com/anthropics/skills, part of its `example-skills` plugin): guidance for distinctive, non-templated visual design. Other tools: copy its `skills/frontend-design` folder into your tool's skills folder.
 
-Design review, audits, polish and the design-system files. Source: https://github.com/pbakaus/impeccable (Apache 2.0). Docs: https://impeccable.style/docs
-
-- **Any tool (Claude Code, Cursor, Codex, Copilot, Gemini CLI and others):** run `npx impeccable install` in the repository root (needs Node for `npx`). It detects your tools, asks whether to install for this project or globally, and offers its design hook. Reload your tool afterwards. `npx impeccable update` refreshes it.
-- **Claude Code plugin instead:** `/plugin marketplace add pbakaus/impeccable`, then open `/plugin` and install Impeccable.
-- Useful commands in your agent: `/impeccable critique`, `/impeccable audit`, `/impeccable polish` (on Codex: `$impeccable …`). Do not run `/impeccable init` again: `PRODUCT.md` already exists.
-- Check the rendered page without an agent: `npx impeccable detect http://localhost:3000` (with `bun run dev` running).
-- Be aware: its hooks run automatically after edits, and on first use it downloads its engine to `~/.impeccable/bin/`. It sends anonymous design-choice telemetry; turn it off with `npx impeccable telemetry off` or `DO_NOT_TRACK=1`.
-
-### frontend-design (Anthropic)
-
-Guidance for distinctive, non-templated visual design. Source: https://github.com/anthropics/skills, folder `skills/frontend-design` (Apache 2.0).
-
-- **Claude.ai:** already available on paid plans; just ask Claude to use it.
-- **Claude Code:** `/plugin marketplace add anthropics/skills`, then `/plugin install example-skills@anthropic-agent-skills` (frontend-design is part of the example-skills plugin).
-- **Other tools:** copy the `skills/frontend-design` folder into your tool's skills folder (for example `.agents/skills/` for Codex, or see your tool's skills documentation).
+In Claude Code, trust the folder and accept the plugin prompt; if Claude Code says a plugin is enabled but not installed, run `claude plugin install impeccable@impeccable --scope project` and `claude plugin install example-skills@anthropic-agent-skills --scope project`.
 
 When using either skill here, the rules in `DESIGN.md` and the "Design rules" above take precedence over the skill's general defaults: the skill guides how to work; this project's decisions say what the site looks like.

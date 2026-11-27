@@ -1,0 +1,10 @@
+#!/bin/sh
+# Blocks secrets, private paths/links, personal emails and broken data before they are committed.
+# Enabled automatically by `bun install` (see "prepare" in package.json).
+set -e
+bun scripts/check-sensitive.ts --staged
+# Extra secret scan when gitleaks is installed locally (optional).
+if command -v gitleaks >/dev/null 2>&1; then
+  gitleaks git --staged --no-banner --redact
+fi
+bun run typecheck

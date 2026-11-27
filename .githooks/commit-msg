@@ -1,0 +1,3 @@
+#!/bin/sh
+# Keeps private links, local paths and personal emails out of commit messages.
+exec bun scripts/check-sensitive.ts --message "$1"
