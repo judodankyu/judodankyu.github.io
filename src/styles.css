@@ -84,6 +84,7 @@
   }
 
   .brand {
+    display: grid;
     font: 700 1.0625rem var(--display);
     text-decoration: none;
     white-space: nowrap;
