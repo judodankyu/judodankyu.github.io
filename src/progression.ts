@@ -16,8 +16,10 @@ export interface Step {
   belt: StepBelt;
   /** "5th kyu", "1st dan" */
   grade: string;
-  /** Belt as worded in the programme, e.g. "white belt, 1 stripe". */
+  /** Belt name, e.g. "white belt, 1 star". */
   name: string;
+  /** White-belt stages: stars earned (the IJF programme marks these with stripes on the belt). */
+  stars?: number;
   /** Typical age for the children's track, e.g. "7 years". */
   age?: string;
   /** Minimum time, as the programme gives it. */
@@ -114,22 +116,22 @@ export const TRACKS: readonly Track[] = [
   {
     id: "children",
     label: "Children",
-    description: "For children who start young: white-belt stages first, and smaller steps through each colour.",
+    description: "For children who start young: three white-belt stages, each earning a star, then smaller steps through each colour. (The IJF programme marks the white-belt stages with stripes on the belt.)",
     steps: [
       {
-        id: "c-white-1", belt: "white", grade: "6th kyu", name: "white belt, 1 stripe", age: "5 years", minimum: "3 months", stage: "Discovery",
+        id: "c-white-1", belt: "white", grade: "6th kyu", name: "white belt, 1 star", stars: 1, age: "5 years", minimum: "3 months", stage: "Discovery",
         objectives: YOUNG_OBJECTIVES, focus: ["First contact with 6 throws", "First contact with osaekomi"],
         exercises: [...WHITE_EXERCISES, "Moving: ayumi-ashi forwards and backwards"],
         examination: ["Static demonstration of 1 throw", "1 static osaekomi"], techniques: "yellow",
       },
       {
-        id: "c-white-2", belt: "white", grade: "6th kyu", name: "white belt, 2 stripes", minimum: "3 months", stage: "Discovery",
+        id: "c-white-2", belt: "white", grade: "6th kyu", name: "white belt, 2 stars", stars: 2, minimum: "3 months", stage: "Discovery",
         objectives: YOUNG_OBJECTIVES, focus: ["Learning 3 throws", "Learning 1 osaekomi"],
         exercises: [...WHITE_EXERCISES, "Ne-waza randori", "Kagari-geiko"],
         examination: ["Static demonstration of 3 throws", "2 static osaekomi"], techniques: "yellow",
       },
       {
-        id: "c-white-3", belt: "white", grade: "6th kyu", name: "white belt, 3 stripes", minimum: "3 months", stage: "Improvement",
+        id: "c-white-3", belt: "white", grade: "6th kyu", name: "white belt, 3 stars", stars: 3, minimum: "3 months", stage: "Improvement",
         objectives: YOUNG_OBJECTIVES, focus: ["Learning 5 throws", "Learning 2 osaekomi"],
         exercises: [...WHITE_EXERCISES, "Moving in pairs"],
         examination: ["Static demonstration of 5 throws", "2 static osaekomi"], techniques: "yellow",

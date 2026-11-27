@@ -432,6 +432,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+    .step { transition: none; }
   }
 
   /* Main page: one line under each colour-belt grade, linking to its step on the pathway. */
@@ -483,21 +484,24 @@
     &::before { content: ""; position: absolute; left: 1.1875rem; top: .75rem; bottom: 2rem; width: 2px; background: var(--line); }
   }
 
+  /* Every step keeps the same box, so tinting one never moves the page. */
   .step {
     position: relative;
-    padding: 0 0 2.5rem 4rem;
-    scroll-margin-top: 6rem;
-    & > .swatch { position: absolute; left: 0; top: .5rem; }
+    margin-inline: -1rem;
+    padding: 1rem 1rem 1.5rem 5rem;
+    border-radius: 8px;
+    scroll-margin-top: 5rem;
+    transition: background-color .3s;
+    & > .swatch { position: absolute; left: 1rem; top: 1.5rem; }
+    /* Stars earned on the white belt, drawn on its swatch. */
+    & > .swatch:not(:empty) { display: flex; align-items: center; justify-content: center; gap: 1px; font-size: .625rem; line-height: 1; color: #c48f00; }
     & h3 { font: 700 1.375rem/1.3 var(--display); }
-    /* Arriving from a grade on the main page: the step is softly tinted in its belt colour. */
-    &:target {
-      margin: -1rem -1rem 1rem;
-      padding: 1rem 1rem 1.5rem 5rem;
-      border-radius: 8px;
-      background: color-mix(in oklab, var(--mark) 9%, var(--bg));
-      & > .swatch { left: 1rem; top: 1.5rem; }
-    }
   }
+
+  /* The step being read is softly tinted in its belt colour: the one in the middle of the screen,
+     or, without JavaScript, the one a link from the main page arrived at. */
+  .step[aria-current],
+  .pathway:not(.tracking) .step:target { background: color-mix(in oklab, var(--mark) 9%, var(--bg)); }
 
   .step-meta { margin-top: .25rem; font-size: .875rem; color: var(--muted); }
   .step-focus { margin-top: .5rem; max-width: 70ch; }
@@ -519,7 +523,7 @@
   }
 
   @media (width < 40rem) {
-    .step { padding-left: 3.25rem; }
+    .step { padding-left: 4.25rem; }
     .step > .swatch { width: 2rem; }
     .steps::before { left: .9375rem; }
     .step-cols { grid-template-columns: 1fr; }

@@ -148,7 +148,7 @@ function step(s: Step): Html {
   const meta = [s.age && `Age ${s.age}`, s.minimum && `Minimum time ${s.minimum}`, s.stage && `Stage: ${s.stage.toLowerCase()}`].filter(Boolean).join(". ");
   const own = grade(target) === s.grade;
   return html`<li class="step" id="${s.id}" data-belt="${s.belt}">
-    <span class="obi swatch" aria-hidden="true"></span>
+    <span class="obi swatch" aria-hidden="true">${s.stars ? "★".repeat(s.stars) : ""}</span>
     <h3>${s.grade} <span class="gloss"><span lang="ja">${jp.kanji}</span> ${jp.romaji}, ${s.name}</span></h3>
     ${meta ? html`<p class="step-meta">${meta}.</p>` : ""}
     <p class="step-focus">${s.focus.join(". ")}.</p>

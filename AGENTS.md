@@ -100,6 +100,7 @@ No framework, no runtime dependencies, no server. Keep it that way unless there 
 - The kyu programme is a teaching guide, not a compulsory syllabus (IJF, December 2025). Keep that wording; do not present minimum times or examinations as rules.
 - Keep the programme's own terms where they are ambiguous ("gatame-waza", "minimum time 1 year") rather than reinterpreting them.
 - The age-track switch is radio buttons plus CSS `:has()`; it needs no JavaScript. Main-page links point to the "From 11 years" track (`progression/#orange`); children's steps have ids starting with `c-`.
+- The white-belt stages are named with stars (1, 2, 3 stars), not stripes: friendlier for young children. Say so where the page cites the programme.
 
 ## Search engines and link previews
 
