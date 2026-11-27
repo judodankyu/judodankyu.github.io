@@ -30,9 +30,11 @@ Requires [Bun](https://bun.sh). There are no other dependencies besides TypeScri
 |---|---|
 | `index.html` | Page markup and the shared SVG paint (wash and mist filters, mountain gradients). |
 | `src/data.ts` | **All grade content**: grades, techniques, kata, categories. Edit content here. |
-| `src/render.ts` | Builds the chart, grade tabs and grade lists as HTML strings (escaped through its `html` template). |
+| `src/render.ts` | Builds the chart, grade tabs, grade lists and the grading pathway as HTML strings (escaped through its `html` template). |
+| `src/progression.ts` | The IJF colour-belt programme 2026: both age tracks, step by step (minimum time, objectives, exercises, examination). |
+| `progression/index.html`, `src/pathway.ts` | The grading pathway page and its dev-only script. |
 | `src/main.ts` | Search, active-tab tracking; fills in the grades itself only in `bun run dev`. |
-| `scripts/build.ts` | Production build: writes the grades into `index.html`, bundles to `dist/`, copies `public/`. |
+| `scripts/build.ts` | Production build: writes the grades into `index.html` and the pathway into `progression/index.html`, bundles both to `dist/`, copies `public/`. |
 | `public/` | Copied as is to the site root: `robots.txt`, `sitemap.xml`, `og.png` (link preview image). |
 | `src/styles.css` | All styles: modern CSS (`@layer`, nesting, `light-dark()`, container queries). |
 | `.github/workflows/deploy.yml` | Builds with Bun and publishes `dist/` to GitHub Pages on every push to `main`. |
@@ -91,6 +93,13 @@ No framework, no runtime dependencies, no server. Keep it that way unless there 
 - GitHub runs the same checks on every push and pull request (`.github/workflows/security.yml`), plus a TruffleHog secret scan and dependency review. Dependabot proposes action and package updates weekly.
 - All page text goes through the `html` template in `src/render.ts`, which escapes it; never assign unescaped strings to `innerHTML`. The Content-Security-Policy in `index.html` allows only this site's files and Google Fonts: add a source there before using any new external resource.
 - A line that is safe but trips the checker can end with `sensitive-check: allow` and a reason. Do not use `--no-verify`.
+
+## Grading pathway
+
+- `progression/` shows the IJF colour-belt programme 2026 (the spreadsheet linked in the footer). Each step links to its grade's techniques on the main page; techniques are never repeated there.
+- The kyu programme is a teaching guide, not a compulsory syllabus (IJF, December 2025). Keep that wording; do not present minimum times or examinations as rules.
+- Keep the programme's own terms where they are ambiguous ("gatame-waza", "minimum time 1 year") rather than reinterpreting them.
+- The age-track switch is radio buttons plus CSS `:has()`; it needs no JavaScript. Main-page links point to the "From 11 years" track (`progression/#orange`); children's steps have ids starting with `c-`.
 
 ## Search engines and link previews
 

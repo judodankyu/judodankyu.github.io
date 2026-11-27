@@ -1,10 +1,11 @@
 #!/usr/bin/env bun
 /**
- * Production build: writes the grades into index.html (so search engines, link previews and
- * readers without JavaScript get the full content), bundles it into dist/, and copies public/.
+ * Production build: writes the grades into index.html and the grading pathway into progression/index.html
+ * (so search engines, link previews and readers without JavaScript get the full content),
+ * bundles both into dist/, and copies public/.
  */
 import { cpSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
-import { chartHtml, mainHtml, tabsHtml } from "../src/render";
+import { chartHtml, mainHtml, pathwayHtml, tabsHtml } from "../src/render";
 
 const fill = (page: string, empty: string, content: string) => {
   if (!page.includes(empty)) throw new Error(`index.html no longer contains ${empty}`);
@@ -16,16 +17,20 @@ page = fill(page, '<ol class="cols" id="cols"></ol>', chartHtml());
 page = fill(page, '<nav class="tabs" id="tabs" aria-label="Grades"></nav>', tabsHtml());
 page = fill(page, '<main id="main"></main>', mainHtml());
 
-// A temporary copy one folder down, so the output keeps the name index.html.
-const tmp = ".build/index.html";
-mkdirSync(".build", { recursive: true });
-writeFileSync(tmp, page.replaceAll('"./src/', '"../src/'));
+let pathway = await Bun.file("progression/index.html").text();
+pathway = fill(pathway, '<main id="pathway" class="pathway"></main>', pathwayHtml());
+
+// Temporary copies one folder down, so the output keeps the names index.html and progression/index.html.
+mkdirSync(".build/progression", { recursive: true });
+writeFileSync(".build/index.html", page.replaceAll('"./src/', '"../src/'));
+writeFileSync(".build/progression/index.html", pathway.replaceAll('"../src/', '"../../src/'));
 rmSync("dist", { recursive: true, force: true });
 try {
-  const proc = Bun.spawnSync(["bun", "build", `./${tmp}`, "--outdir", "dist", "--minify"], { stdout: "inherit", stderr: "inherit" });
+  const entries = ["./.build/index.html", "./.build/progression/index.html"];
+  const proc = Bun.spawnSync(["bun", "build", ...entries, "--outdir", "dist", "--minify"], { stdout: "inherit", stderr: "inherit" });
   if (proc.exitCode !== 0) process.exit(proc.exitCode ?? 1);
 } finally {
   rmSync(".build", { recursive: true, force: true });
 }
 cpSync("public", "dist", { recursive: true });
-console.log("✓ dist/ built with prerendered grades");
+console.log("✓ dist/ built with prerendered grades and pathway");

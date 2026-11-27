@@ -1,5 +1,6 @@
 /** Page markup as strings, so the build can write it into index.html and the browser does not have to. */
 import { CATEGORY, FAMILIES, GROUPS, KATA_URL, PROHIBITED, type Belt, type Technique } from "./data";
+import { STEP_FOR_GRADE, TRACKS, type Step, type Track } from "./progression";
 
 const esc = (s: string): string =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
@@ -76,6 +77,13 @@ function row(t: Technique, n: number): Html {
   </a></li>`;
 }
 
+/** One line linking a grade to its step on the grading pathway page (colour belts only). */
+function grading(b: Belt): Html | "" {
+  const step = STEP_FOR_GRADE.get(b.id);
+  if (!step?.minimum) return "";
+  return html`<p class="grading">Grading: minimum ${step.minimum}. <a href="./progression/#${step.id}">Objectives and examination</a></p>`;
+}
+
 function beltSection(b: Belt): Html {
   const numbered = b.techniques.map((t, i) => [t, i + 1] as const);
   const lists = FAMILIES.map((f) => {
@@ -105,7 +113,7 @@ function beltSection(b: Belt): Html {
       <span class="obi swatch" aria-hidden="true"></span>
       <h3 id="${b.id}-h">${title(b)} <span class="gloss">${subtitle(b)}, ${b.techniques.length} techniques</span></h3>
     </div>
-    ${lists}${kata}
+    ${grading(b)}${lists}${kata}
   </section>`;
 }
 
@@ -122,3 +130,43 @@ export const mainHtml = (): string =>
     ${g.belts.map(beltSection)}
   </div>`,
   )}`.value;
+
+/* Grading pathway page. */
+
+/** Japanese name for each grade, from the grade lists, plus the white-belt 6th kyu. */
+const JAPANESE: ReadonlyMap<string, Belt["japanese"]> = new Map([
+  ["6th kyu", { kanji: "六級", romaji: "Rokkyu" }],
+  ...belts.map((b) => [grade(b), b.japanese] as const),
+]);
+
+const items = (title: string, list: readonly string[]) =>
+  list.length ? html`<div><h4>${title}</h4><ul>${list.map((x) => html`<li>${x}</li>`)}</ul></div>` : "";
+
+function step(s: Step): Html {
+  const jp = JAPANESE.get(s.grade)!;
+  const target = belts.find((b) => b.id === s.techniques)!;
+  const meta = [s.age && `Age ${s.age}`, s.minimum && `Minimum time ${s.minimum}`, s.stage && `Stage: ${s.stage.toLowerCase()}`].filter(Boolean).join(". ");
+  const own = grade(target) === s.grade;
+  return html`<li class="step" id="${s.id}" data-belt="${s.belt}">
+    <span class="obi swatch" aria-hidden="true"></span>
+    <h3>${s.grade} <span class="gloss"><span lang="ja">${jp.kanji}</span> ${jp.romaji}, ${s.name}</span></h3>
+    ${meta ? html`<p class="step-meta">${meta}.</p>` : ""}
+    <p class="step-focus">${s.focus.join(". ")}.</p>
+    ${s.objectives.length ? html`<div class="step-cols">${items("Objectives", s.objectives)}${items("Exercises", s.exercises)}${items("Examination", s.examination)}</div>` : ""}
+    <p class="step-tech"><a href="../#${target.id}">${own ? `The ${target.techniques.length} techniques of ${grade(target)}` : `Techniques from the ${grade(target)} list`}</a></p>
+  </li>`;
+}
+
+const track = (t: Track) => html`<section class="track" data-track="${t.id}" aria-labelledby="track-${t.id}">
+    <h2 class="sr-only" id="track-${t.id}">${t.label}</h2>
+    <p class="track-note">${t.description}</p>
+    <ol class="steps">${t.steps.map(step)}</ol>
+  </section>`;
+
+/** Age-track switch: radio buttons, shown and hidden with CSS :has(), so it works without JavaScript. */
+const trackSwitch = () => html`<fieldset class="track-switch">
+    <legend class="sr-only">Age track</legend>
+    ${TRACKS.map((t, i) => html`<input type="radio" name="track" id="t-${t.id}" value="${t.id}"${i === 0 ? html` checked` : ""}><label for="t-${t.id}">${t.label}</label>`)}
+  </fieldset>`;
+
+export const pathwayHtml = (): string => html`${trackSwitch()}${TRACKS.map(track)}`.value;

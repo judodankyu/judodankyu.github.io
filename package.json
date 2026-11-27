@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun ./index.html",
+    "dev": "bun ./index.html ./progression/index.html",
     "build": "bun scripts/build.ts",
     "typecheck": "tsc --noEmit",
     "check": "bun scripts/check-sensitive.ts --all",

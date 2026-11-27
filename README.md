@@ -7,6 +7,7 @@ Every technique from the 2026 Belt Grades Guide, each linked to its official Kod
 - `src/data.ts` — the grades and techniques (edit here)
 - `src/render.ts` — the chart and grade lists as HTML (written into the page at build time)
 - `src/main.ts` — search and grade-tab tracking
+- `src/progression.ts`, `progression/` — the grading pathway page (IJF colour-belt programme 2026)
 - `public/` — robots.txt, sitemap.xml and the link-preview image
 - `AGENTS.md` — rules and checklist for collaborators and AI coding agents (start here)
 - `PRODUCT.md` — who the site is for and what it must do
