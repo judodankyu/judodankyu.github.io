@@ -117,7 +117,7 @@ export const TRACKS: readonly Track[] = [
   {
     id: "children",
     label: "Children",
-    description: "For children who start young: three white-belt stages, each earning a star, then a half belt for the first step of each new grade. (The IJF programme marks the white-belt stages with stripes on the belt.)",
+    description: "For children who start young: three white-belt stages, each earning a star, then a half belt for the first step of each new grade.",
     steps: [
       {
         id: "c-white-1", belt: "white", grade: "6th kyu", name: "white belt, 1 star", stars: 1, age: "5 years", minimum: "3 months from white", stage: "Discovery",
@@ -138,21 +138,21 @@ export const TRACKS: readonly Track[] = [
         examination: ["Static demonstration of 5 throws", "2 static osaekomi"], techniques: "yellow",
       },
       {
-        id: "c-white-yellow", belt: "white-yellow", grade: "6th kyu", name: "white-yellow belt", age: "6½ years", minimum: "3 months", stage: "Improvement",
+        id: "c-white-yellow", belt: "white-yellow", grade: "6th kyu", name: "white-yellow belt", age: "6 years", minimum: "3 months", stage: "Improvement",
         objectives: ["Starting judo", "Games and technique", "Opposition in safe conditions"], focus: ["Learning 6 throws", "Ne-waza practice, escaping osaekomi"],
         exercises: [...WHITE_EXERCISES, "From standing to the ground"],
         examination: ["Static demonstration of 6 throws", "2 escapes from osaekomi", "2 osaekomi in sequence"], techniques: "yellow",
       },
       {
-        id: "c-yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "6 years", minimum: "6 months", stage: "Learning",
-        objectives: ["Games and technique", "Opposition in safe conditions"], focus: ["6 throws on the move", "Introduction to osaekomi"],
+        id: "c-yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "6½ years", minimum: "6 months", stage: "Learning",
+        objectives: ["Games and technique", "Opposition in combat in safe conditions"], focus: ["6 throws on the move", "Introduction to osaekomi"],
         exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Preparing the yellow-belt demonstration", "Ne-waza: escaping osaekomi, turning over"],
-        examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "3 escapes from osaekomi", "3 osaekomi in sequence"], techniques: "yellow",
+        examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "3 escapes from osaekomi", "2 osaekomi in sequence"], techniques: "yellow",
       },
       {
-        id: "c-orange-7", belt: "yellow-orange", grade: "4th kyu", name: "yellow-orange belt", age: "7 years", minimum: "1 year", stage: "Learning",
-        objectives: ORANGE_YOUNG_OBJECTIVES, focus: ["Learning up to 5 throws", "Improving osaekomi, half the holds"],
-        exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Tai-sabaki", "Throws on the move", "Sequences from escaping osaekomi"],
+        id: "c-orange-7", belt: "yellow-orange", grade: "4th kyu", name: "yellow-orange belt", age: "7½ years", minimum: "1 year", stage: "Learning",
+        objectives: ORANGE_YOUNG_OBJECTIVES, focus: ["Learning up to 5 throws", "Improving osaekomi"],
+        exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Tai-sabaki", "Throws on the move", "Tachi-waza while moving", "Sequences from escaping osaekomi"],
         examination: ["Demonstration of 5 nage-no-kata type throws, linked together on the move", ...ORANGE_EXAM.slice(1)], techniques: "orange",
       },
       {
