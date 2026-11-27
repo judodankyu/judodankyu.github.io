@@ -37,7 +37,7 @@ The IJF published the guide as a PDF. This site turns it into a searchable, link
 - Techniques linked out to YouTube; nothing is embedded or re-hosted.
 - Language: English only. Technique names stay in Japanese (romaji and kanji); Kodokan terminology is used throughout.
 - Techniques the Kodokan prohibits in randori and contest (Kani-basami, Kawazu-gake, Do-jime, Ashi-garami) are flagged.
-- The site mirrors the guide's content. Two kanji typos in the PDF were corrected (送足払, 支釣込足); any further deviation from the source must be deliberate and noted.
+- The site mirrors the guide's content. Two kanji typos in the PDF were corrected (送足払, 支釣込足); the 6th kyu 1-star white belt reads "First contact with 1 throw" (was 6, per the guide); the 6th kyu 2-star white belt reads "Learning 2 osaekomi" (was 1, per the guide); the first kids' step minimum reads "3 months from white"; the white-yellow kids' step age reads "6½ years"; any further deviation from the source must be deliberate and noted.
 - Existing implementation: TypeScript compiled with Bun into a static site (see README.md).
 
 ## Brand Commitments

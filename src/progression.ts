@@ -120,14 +120,14 @@ export const TRACKS: readonly Track[] = [
     description: "For children who start young: three white-belt stages, each earning a star, then a half belt for the first step of each new grade. (The IJF programme marks the white-belt stages with stripes on the belt.)",
     steps: [
       {
-        id: "c-white-1", belt: "white", grade: "6th kyu", name: "white belt, 1 star", stars: 1, age: "5 years", minimum: "3 months", stage: "Discovery",
-        objectives: YOUNG_OBJECTIVES, focus: ["First contact with 6 throws", "First contact with osaekomi"],
+        id: "c-white-1", belt: "white", grade: "6th kyu", name: "white belt, 1 star", stars: 1, age: "5 years", minimum: "3 months from white", stage: "Discovery",
+        objectives: YOUNG_OBJECTIVES, focus: ["First contact with 1 throw", "First contact with osaekomi"],
         exercises: [...WHITE_EXERCISES, "Moving: ayumi-ashi forwards and backwards"],
         examination: ["Static demonstration of 1 throw", "1 static osaekomi"], techniques: "yellow",
       },
       {
         id: "c-white-2", belt: "white", grade: "6th kyu", name: "white belt, 2 stars", stars: 2, minimum: "3 months", stage: "Discovery",
-        objectives: YOUNG_OBJECTIVES, focus: ["Learning 3 throws", "Learning 1 osaekomi"],
+        objectives: YOUNG_OBJECTIVES, focus: ["Learning 3 throws", "Learning 2 osaekomi"],
         exercises: [...WHITE_EXERCISES, "Ne-waza randori", "Kagari-geiko"],
         examination: ["Static demonstration of 3 throws", "2 static osaekomi"], techniques: "yellow",
       },
@@ -138,7 +138,7 @@ export const TRACKS: readonly Track[] = [
         examination: ["Static demonstration of 5 throws", "2 static osaekomi"], techniques: "yellow",
       },
       {
-        id: "c-white-yellow", belt: "white-yellow", grade: "6th kyu", name: "white-yellow belt", age: "6 years", minimum: "3 months", stage: "Improvement",
+        id: "c-white-yellow", belt: "white-yellow", grade: "6th kyu", name: "white-yellow belt", age: "6½ years", minimum: "3 months", stage: "Improvement",
         objectives: ["Starting judo", "Games and technique", "Opposition in safe conditions"], focus: ["Learning 6 throws", "Ne-waza practice, escaping osaekomi"],
         exercises: [...WHITE_EXERCISES, "From standing to the ground"],
         examination: ["Static demonstration of 6 throws", "2 escapes from osaekomi", "2 osaekomi in sequence"], techniques: "yellow",
