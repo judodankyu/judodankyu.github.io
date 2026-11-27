@@ -79,11 +79,11 @@ export const TRACKS: readonly Track[] = [
     description: "For judoka who start at 11 years or older: one step per grade.",
     steps: [
       {
-        id: "yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", minimum: "6 months", stage: "Learning",
+        id: "yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", minimum: "6 months from white", stage: "Learning",
         objectives: ["Safe practice", "Judo fundamentals", "Games of opposition", "Ne-waza and tachi-waza"],
         focus: ["Learning 6 throws on the move", "Learning osaekomi"],
         exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Mae-mawari-ukemi from a low position", "Tsugi-ashi in 4 directions", "Ne-waza: escaping osaekomi, turning over, freeing a trapped leg"],
-        examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "Randori", "3 consecutive osaekomi with escapes, freeing a trapped leg in sequence"],
+        examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "Randori", "Ne-waza"],
         techniques: "yellow",
       },
       {
@@ -152,8 +152,8 @@ export const TRACKS: readonly Track[] = [
       {
         id: "c-orange-7", belt: "yellow-orange", grade: "4th kyu", name: "yellow-orange belt", age: "7½ years", minimum: "1 year", stage: "Learning",
         objectives: ORANGE_YOUNG_OBJECTIVES, focus: ["Learning up to 5 throws", "Improving osaekomi"],
-        exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Tai-sabaki", "Throws on the move", "Tachi-waza while moving", "Sequences from escaping osaekomi"],
-        examination: ["Demonstration of 5 nage-no-kata type throws, linked together on the move", ...ORANGE_EXAM.slice(1)], techniques: "orange",
+        exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Tai-sabaki", "Tachi-waza while moving", "Sequences from escaping osaekomi"],
+        examination: ["Demonstration of 5 nage-no-kata type throws, linked together on the move", "Randori", "5 consecutive osaekomi with escapes, in sequence"], techniques: "orange",
       },
       {
         id: "c-orange-8", belt: "orange", grade: "4th kyu", name: "orange belt", age: "8 years", minimum: "1 year", stage: "Learning",
