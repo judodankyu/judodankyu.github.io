@@ -71,7 +71,7 @@ function row(t: Technique, n: number): Html {
     <span class="romaji">${romaji}</span>
     <span class="kanji" lang="ja">${kanji}</span>
     <span class="english">${sentence(english)}${warn}</span>
-    <span class="kind">${fam.id === "throws" ? html`${c.term} <span class="gloss">${c.label}</span>` : ""}</span>
+    <span class="kind">${fam.id === "throws" ? html`${c.term} <span class="gloss">(${c.label})</span>` : ""}</span>
     <span class="watch">Watch<span class="sr-only"> ${romaji} on the Kodokan channel</span></span>
   </a></li>`;
 }
@@ -82,14 +82,14 @@ function beltSection(b: Belt): Html {
     const items = numbered.filter(([t]) => f.cats.includes(t[3]));
     if (!items.length) return "";
     return html`<div class="family">
-      <h4><span class="fam-kanji" lang="ja">${f.kanji}</span>${f.term} <span class="gloss">${f.title.toLowerCase()}</span></h4>
+      <h4><span class="fam-kanji" lang="ja">${f.kanji}</span>${f.term} <span class="gloss">(${f.title.toLowerCase()})</span></h4>
       <ol class="rows">${items.map(([t, n]) => row(t, n))}</ol>
     </div>`;
   });
 
   const kata = b.kata
     ? html`<div class="family">
-        <h4><span class="fam-kanji" lang="ja">形</span>Kata <span class="gloss">forms</span></h4>
+        <h4><span class="fam-kanji" lang="ja">形</span>Kata <span class="gloss">(forms)</span></h4>
         <ol class="rows"><li><a class="row kata" href="${b.kata.video ? `https://www.youtube.com/watch?v=${encodeURIComponent(b.kata.video)}` : KATA_URL}" target="_blank" rel="noopener"
           data-s="${`${b.kata.title} ${b.kata.description} kata`.toLowerCase()}">
           <span class="num">${b.kata.numbers}</span>
