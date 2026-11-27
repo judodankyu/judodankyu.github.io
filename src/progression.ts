@@ -91,7 +91,7 @@ export const TRACKS: readonly Track[] = [
         objectives: ["Technical improvement", "Confidence in ukemi", "Randori and uchi-komi", "Introduction to refereeing"],
         focus: ["Learning 9 throws on the move", "Improving osaekomi"],
         exercises: ["Falling from standing", "Confidence building", "Ne-waza randori", "Yakusoku-geiko", "Tachi-waza randori", "Shiai"],
-        examination: [...ORANGE_EXAM.slice(0, 1), "Club shiai with refereeing", ...ORANGE_EXAM.slice(1)],
+        examination: [...ORANGE_EXAM.slice(0, 1), "Club shiai with refereeing", "Randori", "5 consecutive osaekomi with escapes, in sequence"],
         techniques: "orange",
       },
       {
