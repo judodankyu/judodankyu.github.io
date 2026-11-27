@@ -43,6 +43,7 @@ function chart(): Html[] {
         <span class="plot"><span class="obi" style="--h:${(known / TOTAL) * 100}%"></span></span>
         <span class="count">${known}</span>
         <span class="name">${grade(b)}</span>
+        <span class="jp-name" lang="ja">${b.japanese.kanji}</span>
         <span class="sr-only">${isKyu(b) ? ` ${shortName(b).toLowerCase()} belt` : ""}: ${known} of ${TOTAL} techniques known by this grade</span>
       </a></li>`;
     });
@@ -111,7 +112,7 @@ function beltSection(b: Belt): Html {
 export const chartHtml = (): string => html`${chart()}`.value;
 
 export const tabsHtml = (): string =>
-  html`${belts.map((b) => html`<a class="tab" href="#${b.id}" data-belt="${b.id}" title="${describe(b)}">${grade(b)}</a>`)}`.value;
+  html`${belts.map((b) => html`<a class="tab" href="#${b.id}" data-belt="${b.id}" title="${describe(b)}">${grade(b)}<span class="jp-name" lang="ja">${b.japanese.kanji}</span></a>`)}`.value;
 
 export const mainHtml = (): string =>
   html`${GROUPS.map(
