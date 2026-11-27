@@ -6,6 +6,7 @@ Every technique from the 2026 Belt Grades Guide, each linked to its official Kod
 - `src/styles.css` — modern CSS (nesting, `light-dark()`, `@layer`, container queries); Bun compiles it for older browsers
 - `src/data.ts` — the grades and techniques (edit here)
 - `src/main.ts` — renders the chart, grade lists and search
+- `AGENTS.md` — rules and checklist for collaborators and AI coding agents (start here)
 - `PRODUCT.md` — who the site is for and what it must do
 - `DESIGN.md` — the visual system (Hashimoto Gahō landscape style); `.impeccable/` holds its sidecar and the design brief
 
