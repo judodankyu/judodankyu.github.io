@@ -191,7 +191,7 @@ Belts are rectangles with softly rounded corners (3px; 5px at the top of chart b
 - **State:** a live match count ("12 matches") sits inside the field's right edge while searching; "/" focuses it, Esc clears it.
 
 ### Technique row
-- **Style:** the whole row is one link to the Kodokan video; hairline above and below; hover and keyboard focus tint the row with its belt colour (14% mixed into the page ground) and draw a 3px belt-coloured bar on its left edge, and "Watch" is underlined.
+- **Style:** the whole row is one link to the Kodokan video; hairline above and below; hover and keyboard focus tint the row with its belt colour (14% mixed into the page ground) and "Watch" is underlined.
 - **Content:** number, romaji (bold), kanji (Mincho), English meaning, type (Te-waza hand), Watch.
 - **Prohibited techniques:** a second line in Warning Red, in words.
 

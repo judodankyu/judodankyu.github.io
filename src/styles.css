@@ -365,10 +365,7 @@
     text-decoration: none;
 
     /* Hover takes the colour of the belt this technique belongs to. */
-    &:hover, &:focus-visible {
-      background: color-mix(in oklab, var(--mark, var(--ink)) 14%, var(--bg));
-      box-shadow: inset 3px 0 0 var(--mark, var(--ink));
-    }
+    &:hover, &:focus-visible { background: color-mix(in oklab, var(--mark, var(--ink)) 14%, var(--bg)); }
     &:hover .watch { text-decoration: underline; }
     &:focus-visible { outline-offset: -2px; }
   }
