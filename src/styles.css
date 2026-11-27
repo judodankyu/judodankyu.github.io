@@ -128,10 +128,19 @@
     border-top: 1px solid var(--line);
     color: var(--muted);
     font-size: .875rem;
-    & p { max-width: 70ch; }
-    & p + p { margin-top: .5rem; }
     & a { color: var(--link); }
   }
+
+  /* Sources side by side; they wrap to one column on narrow screens. */
+  .credits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1rem 2rem;
+    & dt { color: var(--ink); font-weight: 700; }
+    & dd { margin: .25rem 0 0; max-width: 34ch; }
+  }
+
+  .safety { margin-top: 1.5rem; color: var(--ink); }
 }
 
 @layer components {
