@@ -67,7 +67,7 @@ function row(t: Technique, n: number): Html {
   const [romaji, kanji, english, cat, videoId] = t;
   const c = CATEGORY[cat];
   const fam = FAMILIES.find((f) => f.cats.includes(cat))!;
-  const warn = PROHIBITED.has(romaji) ? html`<span class="warn">Not allowed in randori or contest</span>` : "";
+  const warn = PROHIBITED.has(romaji) ? html`<span class="warn">Not allowed in randori or competition</span>` : "";
   const search = `${romaji} ${kanji} ${english} ${c.label} ${c.term} ${fam.title}`.toLowerCase();
   return html`<li><a class="row" href="https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}" target="_blank" rel="noopener" data-s="${search}">
     <span class="num">${n}</span>
