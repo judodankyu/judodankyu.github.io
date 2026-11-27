@@ -17,7 +17,6 @@ export interface Belt {
   grade: string;
   techniques: readonly Technique[];
   kata?: Kata;
-  note?: string;
   /** Japanese name of a dan grade, e.g. 初段 Shodan. */
   japanese?: { kanji: string; romaji: string };
 }
@@ -202,7 +201,6 @@ export const GROUPS: readonly Group[] = [
           ["Ashi-garami", "足緘", "Leg Entanglement", "kan", "BWWb0GoAtZw"],
         ],
         kata: { numbers: "13–27", title: "Katame-no-Kata, Sets 1–3", description: "Demonstration as Tori & Uke.", video: KATAME_NO_KATA_VIDEO },
-        note: "Based on the 100 Kodokan classified judo techniques, Nage-no-Kata and Katame-no-Kata, including judo basic skills, structured according to Long Term Athlete Development principles.",
       },
     ],
   },

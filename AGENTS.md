@@ -18,7 +18,7 @@ Read these before changing anything substantial:
 bun install          # once; also turns on the git hooks
 bun run dev          # local preview with live reload
 bun run typecheck    # TypeScript strict check (must pass)
-bun run build        # production site in dist/
+bun run build        # production site in dist/, grades prerendered into the HTML
 bun run check        # scan all files and commit messages for sensitive data
 ```
 
@@ -30,7 +30,10 @@ Requires [Bun](https://bun.sh). There are no other dependencies besides TypeScri
 |---|---|
 | `index.html` | Page markup and the shared SVG paint (wash and mist filters, mountain gradients). |
 | `src/data.ts` | **All grade content**: grades, techniques, kata, categories. Edit content here. |
-| `src/main.ts` | Renders the chart, grade tabs, grade lists, search, active-tab tracking. |
+| `src/render.ts` | Builds the chart, grade tabs and grade lists as HTML strings (escaped through its `html` template). |
+| `src/main.ts` | Search, active-tab tracking; fills in the grades itself only in `bun run dev`. |
+| `scripts/build.ts` | Production build: writes the grades into `index.html`, bundles to `dist/`, copies `public/`. |
+| `public/` | Copied as is to the site root: `robots.txt`, `sitemap.xml`, `og.png` (link preview image). |
 | `src/styles.css` | All styles: modern CSS (`@layer`, nesting, `light-dark()`, container queries). |
 | `.github/workflows/deploy.yml` | Builds with Bun and publishes `dist/` to GitHub Pages on every push to `main`. |
 | `.github/workflows/security.yml` | Security checks on every push and pull request. |
@@ -86,8 +89,14 @@ No framework, no runtime dependencies, no server. Keep it that way unless there 
 - `bun install` turns on the git hooks in `.githooks/`. Before each commit they run `scripts/check-sensitive.ts` (secrets, local file paths, local or private addresses, private Claude links, personal emails, credential files, files over 500 KB, plain http links, video ID format) and the typecheck; the commit message gets the same check. `bun run check` scans every file and every commit message.
 - Never commit secrets, `.env` files, personal emails or links to private sessions. Use your `users.noreply.github.com` address as your git email.
 - GitHub runs the same checks on every push and pull request (`.github/workflows/security.yml`), plus a TruffleHog secret scan and dependency review. Dependabot proposes action and package updates weekly.
-- All page text goes through the `html` template in `src/main.ts`, which escapes it; never assign unescaped strings to `innerHTML`. The Content-Security-Policy in `index.html` allows only this site's files and Google Fonts: add a source there before using any new external resource.
+- All page text goes through the `html` template in `src/render.ts`, which escapes it; never assign unescaped strings to `innerHTML`. The Content-Security-Policy in `index.html` allows only this site's files and Google Fonts: add a source there before using any new external resource.
 - A line that is safe but trips the checker can end with `sensitive-check: allow` and a reason. Do not use `--no-verify`.
+
+## Search engines and link previews
+
+- The build puts all grades and techniques in the HTML itself, so search engines, link previews and readers without JavaScript see the full content. Keep it that way: new content goes through `src/render.ts`.
+- `index.html` holds the title, description, canonical link and link-preview (Open Graph) tags. Update them if the scope changes (new grades, a new guide year).
+- If the chart changes noticeably, regenerate `public/og.png` (1200 × 630, a screenshot of the hero).
 
 ## Design skills
 

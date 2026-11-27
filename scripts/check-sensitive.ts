@@ -61,8 +61,8 @@ function scanText(where: string, text: string, isMessage = false) {
         for (const m of line.match(r.pattern) ?? []) if (!ALLOWED_EMAIL.test(m)) report(at, r.name, m);
       } else if (r.pattern.test(line)) report(at, r.name, line);
     }
-    // Plain http links are not allowed in project files (XML namespaces are identifiers, not links).
-    if (!isMessage && /http:\/\/(?!www\.w3\.org\/)/.test(line)) report(at, "insecure http:// link", line);
+    // Plain http links are not allowed in project files (XML namespaces such as w3.org and sitemaps.org are identifiers, not links).
+    if (!isMessage && /http:\/\/(?!www\.(w3|sitemaps)\.org\/)/.test(line)) report(at, "insecure http:// link", line);
   });
 }
 

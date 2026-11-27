@@ -116,6 +116,7 @@
 
   .source {
     margin-top: 1.25rem;
+    max-width: 44ch;
     font-size: .875rem;
     color: var(--muted);
     & a { color: var(--link); }
@@ -340,7 +341,6 @@
 
   .gloss { margin-left: .375rem; font: 400 .875rem var(--text); color: var(--muted); }
 
-  .note { margin-top: .75rem; max-width: 62ch; font-size: .875rem; color: var(--muted); }
 
   .family { margin-top: 1.5rem; }
 
