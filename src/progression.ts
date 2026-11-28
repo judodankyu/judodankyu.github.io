@@ -75,11 +75,11 @@ const DANS: readonly Step[] = [
 export const TRACKS: readonly Track[] = [
   {
     id: "older",
-    label: "From 11 years",
-    description: "For judoka who start at 11 years or older: one step per grade.",
+    label: "From 12 years",
+    description: "For judoka who start at 12 years or older: one step per grade.",
     steps: [
       {
-        id: "yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", minimum: "6 months from white", stage: "Learning",
+        id: "yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "from 12 years", minimum: "6 months from white", stage: "Learning",
         objectives: ["Safe practice", "Judo fundamentals", "Games of opposition", "Ne-waza and tachi-waza"],
         focus: ["Learning 6 throws on the move", "Learning osaekomi"],
         exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Mae-mawari-ukemi from a low position", "Tsugi-ashi in 4 directions", "Ne-waza: escaping osaekomi, turning over, freeing a trapped leg"],
@@ -87,7 +87,7 @@ export const TRACKS: readonly Track[] = [
         techniques: "yellow",
       },
       {
-        id: "orange", belt: "orange", grade: "4th kyu", name: "orange belt", minimum: "1 year", stage: "Learning",
+        id: "orange", belt: "orange", grade: "4th kyu", name: "orange belt", age: "from 12 years", minimum: "1 year", stage: "Learning",
         objectives: ["Technical improvement", "Confidence in ukemi", "Randori and uchi-komi", "Introduction to refereeing"],
         focus: ["Learning 9 throws on the move", "Improving osaekomi"],
         exercises: ["Falling from standing", "Confidence building", "Ne-waza randori", "Yakusoku-geiko", "Tachi-waza randori", "Shiai"],
@@ -95,7 +95,7 @@ export const TRACKS: readonly Track[] = [
         techniques: "orange",
       },
       {
-        id: "green", belt: "green", grade: "3rd kyu", name: "green belt", minimum: "1 year", stage: "Personal expression",
+        id: "green", belt: "green", grade: "3rd kyu", name: "green belt", age: "from 12 years", minimum: "1 year", stage: "Personal expression",
         objectives: ["Working on favourite techniques (tokui-waza)", "Starting to prepare for 1st dan", "Assisting the teacher, leading warm-ups", "Shiai, technique and culture", "Self-defence fundamentals"],
         focus: ["Learning 8 throws on the move", "Improving osaekomi", "Introduction to shime-waza and gatame-waza"],
         exercises: GREEN_EXERCISES,
@@ -103,14 +103,14 @@ export const TRACKS: readonly Track[] = [
         techniques: "green",
       },
       {
-        id: "blue", belt: "blue", grade: "2nd kyu", name: "blue belt", age: "from 12 years", minimum: "1 year", stage: "Refereeing",
+        id: "blue", belt: "blue", grade: "2nd kyu", name: "blue belt", age: "from 13 years", minimum: "1 year", stage: "Refereeing",
         objectives: ["Tokui-waza sequences, action and reaction", ...BLUE_OBJECTIVES],
         focus: ["Learning the throws", "The 8 strangles of the grade"],
         exercises: ["Refereeing", "Physical preparation", "Tandoku-renshu (tokui-waza)", "Tachi-waza and ne-waza sequences"],
         examination: [...BLUE_EXAM_THROWS, "6 shime-waza and 3 gatame-waza in a row"],
         techniques: "blue",
       },
-      { ...BROWN, id: "brown", age: "from 13 years", focus: ["Learning all the throws", "The 10 groundwork techniques of the grade"] },
+      { ...BROWN, id: "brown", age: "from 14 years", focus: ["Learning all the throws", "The 10 groundwork techniques of the grade"] },
       ...DANS,
     ],
   },
@@ -144,13 +144,13 @@ export const TRACKS: readonly Track[] = [
         examination: ["Static demonstration of 6 throws", "2 escapes from osaekomi", "2 osaekomi in sequence"], techniques: "yellow",
       },
       {
-        id: "c-yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "6½ years", minimum: "6 months", stage: "Learning",
+        id: "c-yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "6 years", minimum: "6 months", stage: "Learning",
         objectives: ["Games and technique", "Opposition in combat in safe conditions"], focus: ["6 throws on the move", "Introduction to osaekomi"],
         exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Preparing the yellow-belt demonstration", "Ne-waza: escaping osaekomi, turning over"],
         examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "3 escapes from osaekomi", "2 osaekomi in sequence"], techniques: "yellow",
       },
       {
-        id: "c-orange-7", belt: "yellow-orange", grade: "4th kyu", name: "yellow-orange belt", age: "7½ years", minimum: "1 year", stage: "Learning",
+        id: "c-orange-7", belt: "yellow-orange", grade: "4th kyu", name: "yellow-orange belt", age: "7 years", minimum: "1 year", stage: "Learning",
         objectives: ORANGE_YOUNG_OBJECTIVES, focus: ["Learning up to 5 throws", "Improving osaekomi"],
         exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Tai-sabaki", "Tachi-waza while moving", "Sequences from escaping osaekomi"],
         examination: ["Demonstration of 5 nage-no-kata type throws, linked together on the move", "Randori", "5 consecutive osaekomi with escapes, in sequence"], techniques: "orange",
@@ -190,11 +190,11 @@ export const TRACKS: readonly Track[] = [
       },
       { ...BROWN, id: "c-blue-brown", belt: "blue-brown", name: "blue-brown belt", age: "13 years", focus: ["Learning half of the throws", "The 10 groundwork techniques of the grade"] },
       // Then the full brown belt, with the programme's "over 13 years" content.
-      { ...BROWN, id: "c-brown", age: "from 13 years", focus: ["Learning all the throws", "The 10 groundwork techniques of the grade"] },
+      { ...BROWN, id: "c-brown", age: "from 14 years", focus: ["Learning all the throws", "The 10 groundwork techniques of the grade"] },
       ...DANS.map((d) => ({ ...d, id: `c-${d.id}` })),
     ],
   },
 ];
 
-/** The step for each grade on the main page, from the track that starts at 11 years. */
+/** The step for each grade on the main page, from the track that starts at 12 years. */
 export const STEP_FOR_GRADE: ReadonlyMap<string, Step> = new Map(TRACKS[0]!.steps.map((s) => [s.techniques, s]));
