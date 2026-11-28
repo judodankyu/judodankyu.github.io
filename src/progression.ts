@@ -59,7 +59,7 @@ const BLUE_OBJECTIVES = ["Adapting to each child's goals: competition, refereein
 const BLUE_EXAM_THROWS = ["Self-defence against collar and sleeve grips, using judo techniques", "Nage-no-Kata, set 2", "12-throw sequence moving in suri-ashi"];
 
 const BROWN: Omit<Step, "id" | "age" | "focus"> = {
-  belt: "brown", grade: "1st kyu", name: "brown belt", minimum: "1 year", stage: "Supporting judo training",
+  belt: "brown", grade: "1st kyu", name: "brown belt", minimum: "1 year",
   objectives: ["Preparing for 1st dan", "Proficiency in self-defence"],
   exercises: ["Refereeing", "Coaching", "Running a refereeing table", "Shiai"],
   examination: ["Self-defence against kicks, using judo techniques", "Nage-no-Kata, set 3", "12-throw sequence moving in suri-ashi", "Katame-no-Kata: osaekomi set"],
@@ -80,7 +80,7 @@ export const TRACKS: readonly Track[] = [
     steps: [
       {
         id: "yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "from 12 years", minimum: "6 months from white", stage: "Learning",
-        objectives: ["Safe practice", "Judo fundamentals", "Games of opposition", "Ne-waza and tachi-waza"],
+        objectives: ["Safe practice", "Judo fundamentals", "Games with a partner", "Ne-waza and tachi-waza"],
         focus: ["Learning 6 throws on the move", "Learning osaekomi"],
         exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Mae-mawari-ukemi (from low position)", "Tsugi-ashi in 4 directions", "Ne-waza practice: escaping osaekomi, returning, turning over, freeing a trapped leg"],
         examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "Randori", "2 osaekomi with 3 escapes, freeing a trapped leg in a sequence"],
@@ -99,7 +99,7 @@ export const TRACKS: readonly Track[] = [
         objectives: ["Working on one or more favourite techniques (tokui-waza)", "Start of the preparation for 1st dan", "Assisting the teacher", "Warm-up management", "Shiai, technique and culture", "Fundamentals of self-defence"],
         focus: ["Learning 8 techniques while moving", "Osaekomi improvement", "Initiation: shime and gatame-waza"],
         exercises: ["Ukemi both sides", "Mae-mawari-ukemi with obstacle", "Aiyotsu and kenka-yotsu", "Happo-no-kuzushi", "Kuzushi-tsukuri-kake", "Circular tsugi-ashi", "Randori", "Renraku and renzoku-waza"],
-        examination: ["Self-defence: uke's attack (feet, arms, fists…), tori's riposte with judo techniques", "Nage-no-Kata, set 1", "8-technique sequence moving in suri-ashi", "Shime and gatame-waza", "9 consecutive osaekomi with 11 escapes, in sequence"],
+        examination: ["Self-defence: uke's attack (feet, arms, fists…), tori's counter with judo techniques", "Nage-no-Kata, set 1", "8-technique sequence moving in suri-ashi", "Shime and gatame-waza", "9 consecutive osaekomi with 11 escapes, in sequence"],
         techniques: "green",
       },
       {
@@ -139,13 +139,13 @@ export const TRACKS: readonly Track[] = [
       },
       {
         id: "c-white-yellow", belt: "white-yellow", grade: "6th kyu", name: "white-yellow belt", age: "6 years", minimum: "3 months", stage: "Improvement",
-        objectives: ["Starting judo", "Games and technique", "Opposition in safe conditions"], focus: ["Learning 6 throws", "Ne-waza practice, escaping osaekomi"],
+        objectives: ["Starting judo", "Games and technique", "Practice with a partner in safe conditions"], focus: ["Learning 6 throws", "Ne-waza practice, escaping osaekomi"],
         exercises: [...WHITE_EXERCISES, "From standing to the ground"],
         examination: ["Static demonstration of 6 throws", "2 escapes from osaekomi", "2 osaekomi in sequence"], techniques: "yellow",
       },
       {
         id: "c-yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "6 years", minimum: "6 months", stage: "Learning",
-        objectives: ["Games and technique", "Opposition in combat in safe conditions"], focus: ["Further training: 6 tachi-waza in movement", "Osaekomi initiation"],
+        objectives: ["Games and technique", "Combat with a partner in safe conditions"], focus: ["Further training: 6 tachi-waza in movement", "Osaekomi initiation"],
         exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Preparation of the technical presentation for yellow belt", "Ne-waza practice: escaping osaekomi, returning"],
         examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "3 techniques to escape osaekomi", "2 osaekomi in sequence"], techniques: "yellow",
       },
@@ -176,13 +176,13 @@ export const TRACKS: readonly Track[] = [
         examination: [SELF_DEFENCE_STRIKES, "Nage-no-Kata, set 1", "4-throw sequence moving in suri-ashi", "11 consecutive osaekomi with escapes, in sequence"], techniques: "green",
       },
       {
-        id: "c-blue-10", belt: "green-blue", grade: "2nd kyu", name: "green-blue belt", age: "10½ years", minimum: "1 year", stage: "Refereeing",
+        id: "c-blue-10", belt: "green-blue", grade: "2nd kyu", name: "green-blue belt", age: "10½ years", minimum: "1 year",
         objectives: BLUE_OBJECTIVES, focus: ["Learning half of the throws", "Introduction to shime-waza and gatame-waza: technique only, not in randori"],
         exercises: ["Refereeing", "Physical preparation", "Tandoku-renshu", "Tachi-waza and ne-waza sequences"],
         examination: [...BLUE_EXAM_THROWS, "2 shime-waza and 2 gatame-waza in a row"], techniques: "blue",
       },
       {
-        id: "c-blue-12", belt: "blue", grade: "2nd kyu", name: "blue belt", age: "12 years", minimum: "1 year", stage: "Shiai",
+        id: "c-blue-12", belt: "blue", grade: "2nd kyu", name: "blue belt", age: "12 years", minimum: "1 year",
         objectives: ["Tokui-waza sequences, action and reaction", BLUE_OBJECTIVES[0]!, "Supervised tasks delegated by the teacher", BLUE_OBJECTIVES[1]!],
         focus: ["Further training in all the throws", "Introduction to shime-waza and gatame-waza: technique only, not in randori"],
         exercises: ["Shiai", "Refereeing practice", "Explaining a technique", "Mondo (questions and answers)", "Tandoku-renshu (tokui-waza)"],
