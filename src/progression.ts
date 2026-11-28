@@ -110,7 +110,7 @@ export const TRACKS: readonly Track[] = [
         examination: ["Self-defence with collar and sleeve grips, using judo techniques", "Nage-no-Kata, 2nd series", "12 nage-waza sequence moving in suri-ashi", "6 shime-waza and 3 gatame-waza in a row"],
         techniques: "blue",
       },
-      { belt: "brown", grade: "1st kyu", name: "brown belt", minimum: "1 year", id: "brown", age: "from 14 years", objectives: ["Preparation for 1st dan", "Proficiency in self-defence"], focus: ["Learning all the techniques", "The 10 ne-waza techniques of the grade"], exercises: ["Support for judo training", "Refereeing", "Coaching", "Running a refereeing table", "Shiai"], examination: ["Self-defence from kicking, with judo techniques", "Nage-no-Kata, 3rd series", "12 nage-waza sequence moving in suri-ashi", "Katame-no-Kata: osaekomi-waza series"], techniques: "brown" },
+      { belt: "brown", grade: "1st kyu", name: "brown belt", minimum: "1 year", id: "brown", age: "from 14 years", objectives: ["Preparation for 1st dan", "Proficiency in self-defence"], focus: ["Learning techniques", "The 10 ne-waza techniques of the grade"], exercises: ["Support for judo training", "Refereeing", "Coaching", "Running a refereeing table", "Shiai"], examination: ["Self-defence from kicking, with judo techniques", "Nage-no-Kata, 3rd series", "12 nage-waza sequence moving in suri-ashi", "Katame-no-Kata: osaekomi-waza series"], techniques: "brown" },
       ...DANS,
     ],
   },
@@ -190,7 +190,7 @@ export const TRACKS: readonly Track[] = [
       },
       { ...BROWN, id: "c-blue-brown", belt: "blue-brown", name: "blue-brown belt", age: "13 years", focus: ["Learning half of the nage-waza techniques", "The 10 ne-waza techniques of the grade"] },
       // Then the full brown belt, with the programme's "over 13 years" content.
-      { ...BROWN, id: "c-brown", age: "from 14 years", focus: ["Learning all the techniques", "The 10 ne-waza techniques of the grade"] },
+      { ...BROWN, id: "c-brown", age: "from 14 years", focus: ["Learning techniques", "The 10 ne-waza techniques of the grade"] },
       ...DANS.map((d) => ({ ...d, id: `c-${d.id}` })),
     ],
   },
