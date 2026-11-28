@@ -34,11 +34,19 @@ if (main) {
   // The observer only wakes us when a step edge crosses that line; the work is in update().
   const observer = new IntersectionObserver(update, { rootMargin: "-42% 0px -57% 0px" });
   for (const s of steps) observer.observe(s);
+  // Belts that have no step in the other track go to the nearest one: half belts to the full belt above them
+  // (kids' yellow-orange to orange), white belts to yellow, and the adults' brown and dans to the top of the kids' track (first white).
+  const NEXT: Record<string, string> = {
+    white: "yellow", "white-yellow": "yellow",
+    "yellow-orange": "orange", "orange-green": "green", "green-blue": "blue", "blue-brown": "brown",
+    brown: "white", "black-1": "white", "black-2": "white",
+  };
   // Age-track switch: keep the reader on the same belt in the other track, rather than jumping to the top.
   main.addEventListener("change", () => {
     const belt = reading?.dataset.belt;
     update();
-    const same = steps.find((s) => s.dataset.belt === belt && s.getBoundingClientRect().height > 0);
+    const want = belt ? (NEXT[belt] ?? belt) : undefined;
+    const same = steps.find((s) => s.dataset.belt === want && s.getBoundingClientRect().height > 0);
     same?.scrollIntoView({ block: "center", behavior: "instant" });
     update();
   });
