@@ -149,7 +149,7 @@ function step(s: Step): Html {
   const own = grade(target) === s.grade;
   const link = html`<a href="../#${target.id}">${own ? `The ${target.techniques.length} techniques of ${grade(target)}` : `Techniques from the ${grade(target)} list`}</a>`;
   const hasColumns = s.objectives.length > 0;
-  const footerBelts = ["white", "white-yellow", "yellow-orange"];
+  const footerBelts = ["white", "white-yellow", "yellow-orange", "orange-green"];
   const inExamination = hasColumns && !footerBelts.includes(s.belt);
   return html`<li class="step" id="${s.id}" data-belt="${s.belt}">
     <span class="obi swatch" aria-hidden="true">${s.stars ? "★".repeat(s.stars) : ""}</span>

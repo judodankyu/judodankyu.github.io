@@ -159,13 +159,13 @@ export const TRACKS: readonly Track[] = [
         id: "c-orange-8", belt: "orange", grade: "4th kyu", name: "orange belt", age: "8 years", minimum: "1 year", stage: "Learning",
         objectives: ORANGE_YOUNG_OBJECTIVES, focus: ["Learning nage-waza techniques", "Improving osaekomi-waza"],
         exercises: ["Ukemi from standing: mae, ushiro and yoko-ukemi", "Confidence building", "Moving sequences", "Tachi-waza and ne-waza", "Sequences from escaping osaekomi-waza"],
-        examination: ["Demonstration of 5 nage-waza techniques in the style of nage-no-kata, linked together on the move", "Randori", "5 consecutive osaekomi-waza with 7 escapes, in sequence"], techniques: "orange",
+        examination: ["Demonstration of 9 nage-waza techniques in the style of nage-no-kata, linked together on the move", "Ne-waza randori", "5 consecutive osaekomi-waza with 7 escapes, in sequence"], techniques: "orange",
       },
       {
         id: "c-orange-green", belt: "orange-green", grade: "3rd kyu", name: "orange-green belt", stage: "Personal expression",
         objectives: ["Mobility and technical sequences", "Assisting the teacher", "Supporting less experienced judoka", "Introduction to self-defence"],
         focus: ["Learning 4 nage-waza techniques", "Improving osaekomi-waza"],
-        exercises: GREEN_EXERCISES,
+        exercises: ["Ukemi both sides", "Aiyotsu and kenka-yotsu", "Happo-no-kuzushi", "Randori", "Renraku-waza and renzoku-waza"],
         examination: [SELF_DEFENCE_STRIKES, "Demonstration of 4 nage-waza techniques in the style of nage-no-kata, linked together on the move", "7 consecutive osaekomi-waza with 9 escapes, in sequence"], techniques: "green",
       },
       {
@@ -189,9 +189,6 @@ export const TRACKS: readonly Track[] = [
         examination: [...BLUE_EXAM_THROWS, "6 shime-waza and 3 gatame-waza in a row"], techniques: "blue",
       },
       { ...BROWN, id: "c-blue-brown", belt: "blue-brown", name: "blue-brown belt", age: "13 years", focus: ["Learning half of the nage-waza techniques", "The 10 ne-waza techniques of the grade"] },
-      // Then the full brown belt, with the programme's "over 13 years" content.
-      { ...BROWN, id: "c-brown", age: "from 14 years", focus: ["Learning the nage-waza, osaekomi-waza and kansetsu-waza techniques"] },
-      ...DANS.map((d) => ({ ...d, id: `c-${d.id}` })),
     ],
   },
 ];
