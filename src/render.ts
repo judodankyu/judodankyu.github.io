@@ -149,6 +149,7 @@ function step(s: Step): Html {
   const own = grade(target) === s.grade;
   const link = html`<a href="../#${target.id}">${own ? `The ${target.techniques.length} techniques of ${grade(target)}` : `Techniques from the ${grade(target)} list`}</a>`;
   const hasColumns = s.objectives.length > 0;
+  const DAN_RULES_URL = "https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2026/01/Rules_for_the_awarding_of_IJF_-1768917846.pdf";
   const footerBelts = ["white", "white-yellow", "yellow-orange", "orange-green", "green-blue", "blue-brown"];
   const inExamination = hasColumns && !footerBelts.includes(s.belt);
   return html`<li class="step" id="${s.id}" data-belt="${s.belt}">
@@ -157,7 +158,7 @@ function step(s: Step): Html {
     ${meta ? html`<p class="step-meta">${meta}.</p>` : ""}
     <p class="step-focus">${s.focus.join(". ")}.</p>
     ${hasColumns ? html`<div class="step-cols">${items("Objectives", s.objectives)}${items("Exercises", s.exercises)}${items("Examination", inExamination ? [...s.examination, link] : s.examination)}</div>` : ""}
-    ${inExamination ? "" : html`<p class="step-tech">${link}</p>`}
+    ${inExamination ? "" : html`<p class="step-tech">${link}${s.belt.startsWith("black") ? html`, <a href="${DAN_RULES_URL}" target="_blank" rel="noopener">IJF rules for the awarding of dan grades</a>` : ""}</p>`}
   </li>`;
 }
 
