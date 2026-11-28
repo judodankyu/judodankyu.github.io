@@ -149,12 +149,15 @@ function step(s: Step): Html {
   const own = grade(target) === s.grade;
   const link = html`<a href="../#${target.id}">${own ? `The ${target.techniques.length} techniques of ${grade(target)}` : `Techniques from the ${grade(target)} list`}</a>`;
   const hasColumns = s.objectives.length > 0;
+  const footerBelts = ["white", "white-yellow", "yellow-orange"];
+  const inExamination = hasColumns && !footerBelts.includes(s.belt);
   return html`<li class="step" id="${s.id}" data-belt="${s.belt}">
     <span class="obi swatch" aria-hidden="true">${s.stars ? "★".repeat(s.stars) : ""}</span>
     <h3>${s.grade} <span class="gloss"><span lang="ja">${jp.kanji}</span> ${jp.romaji}, ${s.name}</span></h3>
     ${meta ? html`<p class="step-meta">${meta}.</p>` : ""}
     <p class="step-focus">${s.focus.join(". ")}.</p>
-    ${hasColumns ? html`<div class="step-cols">${items("Objectives", s.objectives)}${items("Exercises", s.exercises)}${items("Examination", [...s.examination, link])}</div>` : html`<p class="step-tech">${link}</p>`}
+    ${hasColumns ? html`<div class="step-cols">${items("Objectives", s.objectives)}${items("Exercises", s.exercises)}${items("Examination", inExamination ? [...s.examination, link] : s.examination)}</div>` : ""}
+    ${inExamination ? "" : html`<p class="step-tech">${link}</p>`}
   </li>`;
 }
 
