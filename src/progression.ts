@@ -44,7 +44,7 @@ export interface Track {
 }
 
 const YOUNG_OBJECTIVES = ["Awakening to judo", "Discovering judo through play", "Judo as education", "Involving parents", "Safe practice"];
-const WHITE_EXERCISES = ["Falling: mae-ukemi (kneeling), ushiro-ukemi and yoko-ukemi (sitting)"];
+const WHITE_EXERCISES = ["Ukemi: mae-ukemi (kneeling), ushiro-ukemi and yoko-ukemi (sitting)"];
 
 const ORANGE_YOUNG_OBJECTIVES = ["Technical improvement", "Confidence in ukemi", "Introduction to exercises (uchi-komi, kagari-geiko)", "Introduction to refereeing"];
 const ORANGE_EXAM = ["Demonstration of 9 nage-waza techniques in the style of nage-no-kata, linked together on the move", "Randori", "7 consecutive osaekomi-waza with escapes, in sequence"];
@@ -82,7 +82,7 @@ export const TRACKS: readonly Track[] = [
         id: "yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "from 12 years", minimum: "6 months from white", stage: "Learning",
         objectives: ["Safe practice", "Judo fundamentals", "Games with a partner", "Ne-waza and tachi-waza"],
         focus: ["Learning 6 nage-waza techniques on the move", "Learning osaekomi-waza"],
-        exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Mae-mawari-ukemi (from low position)", "Tsugi-ashi in 4 directions", "Ne-waza practice: escaping osaekomi-waza, returning, turning over, freeing a trapped leg"],
+        exercises: ["Ukemi with tori: mae, ushiro and yoko-ukemi", "Mae-mawari-ukemi (from low position)", "Tsugi-ashi in 4 directions", "Ne-waza practice: escaping osaekomi-waza, returning, turning over, freeing a trapped leg"],
         examination: ["Demonstration of 6 nage-waza techniques in the style of nage-no-kata, linked together on the move", "Ne-waza randori", "2 consecutive osaekomi-waza with 3 escapes, in sequence"],
         techniques: "yellow",
       },
@@ -90,7 +90,7 @@ export const TRACKS: readonly Track[] = [
         id: "orange", belt: "orange", grade: "4th kyu", name: "orange belt", age: "from 12 years", minimum: "1 year", stage: "Learning",
         objectives: ["Technical improvement", "Confidence in ukemi", "Randori, uchi-komi and kagari-geiko", "Introduction to refereeing"],
         focus: ["Learning 9 nage-waza techniques on the move", "Improving osaekomi-waza"],
-        exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Confidence building", "Ne-waza randori", "Yakusoku-geiko", "Tachi-waza randori", "Ne-waza shiai"],
+        exercises: ["Ukemi from standing: mae, ushiro and yoko-ukemi", "Confidence building", "Ne-waza randori", "Yakusoku-geiko", "Tachi-waza randori", "Ne-waza shiai"],
         examination: [...ORANGE_EXAM.slice(0, 1), "Club shiai with refereeing", "Ne-waza randori", "5 consecutive osaekomi-waza with 7 escapes, in sequence"],
         techniques: "orange",
       },
@@ -146,19 +146,19 @@ export const TRACKS: readonly Track[] = [
       {
         id: "c-yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "6 years", minimum: "6 months", stage: "Learning",
         objectives: ["Games and technique", "Combat with a partner in safe conditions"], focus: ["Further training: 6 tachi-waza in movement", "Osaekomi-waza initiation"],
-        exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Preparation of the technical presentation for yellow belt", "Ne-waza practice: escaping osaekomi-waza, returning"],
+        exercises: ["Ukemi with tori: mae, ushiro and yoko-ukemi", "Preparation of the technical presentation for yellow belt", "Ne-waza practice: escaping osaekomi-waza, returning"],
         examination: ["Demonstration of 6 nage-waza techniques in the style of nage-no-kata, linked together on the move", "2 consecutive osaekomi-waza with 3 escapes, in sequence"], techniques: "yellow",
       },
       {
         id: "c-orange-7", belt: "yellow-orange", grade: "4th kyu", name: "yellow-orange belt", age: "7 years", minimum: "1 year", stage: "Learning",
         objectives: ORANGE_YOUNG_OBJECTIVES, focus: ["Learning up to 5 nage-waza techniques", "Improving osaekomi-waza"],
-        exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Tai-sabaki", "Tachi-waza while moving", "Sequences from escaping osaekomi-waza"],
+        exercises: ["Ukemi from standing: mae, ushiro and yoko-ukemi", "Tai-sabaki", "Tachi-waza while moving", "Sequences from escaping osaekomi-waza"],
         examination: ["Demonstration of 5 nage-waza techniques in the style of nage-no-kata, linked together on the move", "Randori", "3 consecutive osaekomi-waza with 5 escapes, in sequence"], techniques: "orange",
       },
       {
         id: "c-orange-8", belt: "orange", grade: "4th kyu", name: "orange belt", age: "8 years", minimum: "1 year", stage: "Learning",
         objectives: ORANGE_YOUNG_OBJECTIVES, focus: ["Learning up to 5 nage-waza techniques", "Improving osaekomi-waza"],
-        exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Confidence building", "Moving sequences", "Tachi-waza and ne-waza", "Sequences from escaping osaekomi-waza"],
+        exercises: ["Ukemi from standing: mae, ushiro and yoko-ukemi", "Confidence building", "Moving sequences", "Tachi-waza and ne-waza", "Sequences from escaping osaekomi-waza"],
         examination: ["Demonstration of 5 nage-waza techniques in the style of nage-no-kata, linked together on the move", "Randori", "5 consecutive osaekomi-waza with 7 escapes, in sequence"], techniques: "orange",
       },
       {
