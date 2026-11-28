@@ -81,7 +81,7 @@ export const TRACKS: readonly Track[] = [
       {
         id: "yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "from 12 years", minimum: "6 months from white", stage: "Learning",
         objectives: ["Safe practice", "Judo fundamentals", "Games with a partner", "Ne-waza and tachi-waza"],
-        focus: ["Learning 6 nage-waza techniques on the move", "Learning osaekomi-waza"],
+        focus: ["Learning nage-waza techniques on the move", "Learning osaekomi-waza"],
         exercises: ["Ukemi with tori: mae, ushiro and yoko-ukemi", "Mae-mawari-ukemi (from low position)", "Tsugi-ashi in 4 directions", "Ne-waza practice: escaping osaekomi-waza, returning, turning over, freeing a trapped leg"],
         examination: ["Demonstration of 6 nage-waza techniques in the style of nage-no-kata, linked together on the move", "Ne-waza randori", "2 consecutive osaekomi-waza with 3 escapes, in sequence"],
         techniques: "yellow",
@@ -89,7 +89,7 @@ export const TRACKS: readonly Track[] = [
       {
         id: "orange", belt: "orange", grade: "4th kyu", name: "orange belt", age: "from 12 years", minimum: "1 year", stage: "Learning",
         objectives: ["Technical improvement", "Confidence in ukemi", "Randori, uchi-komi and kagari-geiko", "Introduction to refereeing"],
-        focus: ["Learning 9 nage-waza techniques on the move", "Improving osaekomi-waza"],
+        focus: ["Learning nage-waza techniques on the move", "Improving osaekomi-waza"],
         exercises: ["Ukemi from standing: mae, ushiro and yoko-ukemi", "Confidence building", "Ne-waza randori", "Yakusoku-geiko", "Tachi-waza randori", "Ne-waza shiai"],
         examination: [...ORANGE_EXAM.slice(0, 1), "Club shiai with refereeing", "Ne-waza randori", "5 consecutive osaekomi-waza with 7 escapes, in sequence"],
         techniques: "orange",
@@ -97,7 +97,7 @@ export const TRACKS: readonly Track[] = [
       {
         id: "green", belt: "green", grade: "3rd kyu", name: "green belt", age: "from 12 years", minimum: "1 year", stage: "Personal expression",
         objectives: ["Working on one or more favourite techniques (tokui-waza)", "Start of the preparation for 1st dan", "Assisting the teacher", "Warm-up management", "Shiai, technique and culture", "Fundamentals of self-defence"],
-        focus: ["Learning 8 nage-waza techniques while moving", "Osaekomi-waza improvement", "Initiation: shime and gatame-waza"],
+        focus: ["Learning nage-waza techniques while moving", "Osaekomi-waza improvement", "Initiation: shime and gatame-waza"],
         exercises: ["Ukemi both sides", "Mae-mawari-ukemi with obstacle", "Aiyotsu and kenka-yotsu", "Happo-no-kuzushi", "Kuzushi-tsukuri-kake", "Circular tsugi-ashi", "Randori", "Renraku and renzoku-waza"],
         examination: ["Self-defence: uke's attack (feet, arms, fists…), tori's counter with judo techniques", "Nage-no-Kata, set 1", "8 nage-waza sequence moving in suri-ashi", "Shime and gatame-waza", "9 consecutive osaekomi-waza with 11 escapes, in sequence"],
         techniques: "green",
@@ -110,7 +110,7 @@ export const TRACKS: readonly Track[] = [
         examination: ["Self-defence with collar and sleeve grips, using judo techniques", "Nage-no-Kata, 2nd series", "12 nage-waza sequence moving in suri-ashi", "6 shime-waza and 3 gatame-waza in a row"],
         techniques: "blue",
       },
-      { belt: "brown", grade: "1st kyu", name: "brown belt", minimum: "1 year", id: "brown", age: "from 14 years", objectives: ["Preparation for 1st dan", "Proficiency in self-defence"], focus: ["Learning techniques", "The 10 ne-waza techniques of the grade"], exercises: ["Support for judo training", "Refereeing", "Coaching", "Running a refereeing table", "Shiai"], examination: ["Self-defence from kicking, with judo techniques", "Nage-no-Kata, 3rd series", "12 nage-waza sequence moving in suri-ashi", "Katame-no-Kata: osaekomi-waza series"], techniques: "brown" },
+      { belt: "brown", grade: "1st kyu", name: "brown belt", minimum: "1 year", id: "brown", age: "from 14 years", objectives: ["Preparation for 1st dan", "Proficiency in self-defence"], focus: ["Learning all the techniques", "The 10 ne-waza techniques of the grade"], exercises: ["Support for judo training", "Refereeing", "Coaching", "Running a refereeing table", "Shiai"], examination: ["Self-defence from kicking, with judo techniques", "Nage-no-Kata, 3rd series", "12 nage-waza sequence moving in suri-ashi", "Katame-no-Kata: osaekomi-waza series"], techniques: "brown" },
       ...DANS,
     ],
   },
@@ -190,7 +190,7 @@ export const TRACKS: readonly Track[] = [
       },
       { ...BROWN, id: "c-blue-brown", belt: "blue-brown", name: "blue-brown belt", age: "13 years", focus: ["Learning half of the nage-waza techniques", "The 10 ne-waza techniques of the grade"] },
       // Then the full brown belt, with the programme's "over 13 years" content.
-      { ...BROWN, id: "c-brown", age: "from 14 years", focus: ["Learning techniques", "The 10 ne-waza techniques of the grade"] },
+      { ...BROWN, id: "c-brown", age: "from 14 years", focus: ["Learning all the techniques", "The 10 ne-waza techniques of the grade"] },
       ...DANS.map((d) => ({ ...d, id: `c-${d.id}` })),
     ],
   },
