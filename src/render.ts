@@ -139,7 +139,7 @@ const JAPANESE: ReadonlyMap<string, Belt["japanese"]> = new Map([
   ...belts.map((b) => [grade(b), b.japanese] as const),
 ]);
 
-const items = (title: string, list: readonly string[]) =>
+const items = (title: string, list: readonly (string | Html)[]) =>
   list.length ? html`<div><h4>${title}</h4><ul>${list.map((x) => html`<li>${x}</li>`)}</ul></div>` : "";
 
 function step(s: Step): Html {
@@ -147,13 +147,14 @@ function step(s: Step): Html {
   const target = belts.find((b) => b.id === s.techniques)!;
   const meta = [s.age && `Age ${s.age}`, s.minimum && `Minimum time ${s.minimum}`, s.stage && `Stage: ${s.stage.toLowerCase()}`].filter(Boolean).join(". ");
   const own = grade(target) === s.grade;
+  const link = html`<a href="../#${target.id}">${own ? `The ${target.techniques.length} techniques of ${grade(target)}` : `Techniques from the ${grade(target)} list`}</a>`;
+  const hasColumns = s.objectives.length > 0;
   return html`<li class="step" id="${s.id}" data-belt="${s.belt}">
     <span class="obi swatch" aria-hidden="true">${s.stars ? "★".repeat(s.stars) : ""}</span>
     <h3>${s.grade} <span class="gloss"><span lang="ja">${jp.kanji}</span> ${jp.romaji}, ${s.name}</span></h3>
     ${meta ? html`<p class="step-meta">${meta}.</p>` : ""}
     <p class="step-focus">${s.focus.join(". ")}.</p>
-    ${s.objectives.length ? html`<div class="step-cols">${items("Objectives", s.objectives)}${items("Exercises", s.exercises)}${items("Examination", s.examination)}</div>` : ""}
-    <p class="step-tech"><a href="../#${target.id}">${own ? `The ${target.techniques.length} techniques of ${grade(target)}` : `Techniques from the ${grade(target)} list`}</a></p>
+    ${hasColumns ? html`<div class="step-cols">${items("Objectives", s.objectives)}${items("Exercises", s.exercises)}${items("Examination", [...s.examination, link])}</div>` : html`<p class="step-tech">${link}</p>`}
   </li>`;
 }
 
