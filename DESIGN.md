@@ -160,7 +160,7 @@ A neutral ink-and-paper palette, a mountain palette that exists only inside the 
 
 ## Layout
 
-A single centred column, max 72rem, with fluid gutters (1rem to 2.5rem). The opening scene splits into words on the left (up to 28rem) and the chart on the right; below 60rem it stacks, title first. The chart's painted landscape runs past the column to the window's right edge and fades in on the left.
+A single centred column, max 72rem, with fluid gutters (1rem to 2.5rem). The opening scene splits into words on the left (up to 28rem) and the chart on the right; below 60rem it stacks, title first. The chart's painted landscape runs past the column to the window's right edge and fades out at both sides.
 
 Technique rows are a six-column grid on wide screens (number, name, kanji, meaning, type, Watch) and stack into three lines when the grade's own width drops below 46rem, measured with a container query rather than the window. Spacing steps: 10px inside rows, 24px between technique groups, 48px between grades, 64px before each age stage. Space above a heading is always larger than space below it.
 
