@@ -77,11 +77,11 @@ function row(t: Technique, n: number): Html {
   </a></li>`;
 }
 
-/** One line linking a grade to its step on the grading pathway page (colour belts only). */
+/** One line linking a grade to its step on the grading pathway page (the dan grades have no minimum time, so no "Grading:" lead-in). */
 function grading(b: Belt): Html | "" {
   const step = STEP_FOR_GRADE.get(b.id);
-  if (!step?.minimum) return "";
-  return html`<p class="grading">Grading: minimum ${step.minimum}. <a href="./progression/#${step.id}">Objectives and examination</a></p>`;
+  if (!step) return "";
+  return html`<p class="grading">${step.minimum ? `Grading: minimum ${step.minimum}. ` : ""}<a href="./progression/#${step.id}">Objectives and examination</a></p>`;
 }
 
 function beltSection(b: Belt): Html {
