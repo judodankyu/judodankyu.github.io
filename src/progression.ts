@@ -68,7 +68,7 @@ const BROWN: Omit<Step, "id" | "age" | "focus"> = {
 
 /** Dan grades: the programme lists only the techniques to demonstrate. */
 const DANS: readonly Step[] = [
-  { id: "black-1", belt: "black-1", grade: "1st dan", name: "black belt", objectives: [], focus: ["Demonstration of the 1st dan nage-waza and shime-waza"], exercises: [], examination: [], techniques: "black-1" },
+  { id: "black-1", belt: "black-1", grade: "1st dan", name: "black belt", age: "from 15 years", objectives: [], focus: ["Demonstration of the 1st dan nage-waza and shime-waza"], exercises: [], examination: [], techniques: "black-1" },
   { id: "black-2", belt: "black-2", grade: "2nd dan", name: "black belt", objectives: [], focus: ["Demonstration of the 2nd dan nage-waza, shime-waza and kansetsu-waza"], exercises: [], examination: [], techniques: "black-2" },
 ];
 
