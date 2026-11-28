@@ -533,8 +533,8 @@
 
   /* The step being read is softly tinted in its belt colour: the one in the middle of the screen,
      or, without JavaScript, the one a link from the main page arrived at. */
-  .step[aria-current],
   .step:hover,
+  .pathway:not(:has(.step:hover)) .step[aria-current],
   .pathway:not(.tracking) .step:target { background: color-mix(in oklab, var(--mark) 9%, var(--bg)); }
 
   .step-meta { margin-top: .25rem; font-size: .875rem; color: var(--muted); }
