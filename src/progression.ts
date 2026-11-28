@@ -153,7 +153,7 @@ export const TRACKS: readonly Track[] = [
         id: "c-orange-7", belt: "yellow-orange", grade: "4th kyu", name: "yellow-orange belt", age: "7 years", minimum: "1 year", stage: "Learning",
         objectives: ORANGE_YOUNG_OBJECTIVES, focus: ["Learning up to 5 throws", "Improving osaekomi"],
         exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Tai-sabaki", "Tachi-waza while moving", "Sequences from escaping osaekomi"],
-        examination: ["Demonstration of 5 nage-no-kata type throws, linked together on the move", "Randori", "5 consecutive osaekomi with escapes, in sequence"], techniques: "orange",
+        examination: ["Demonstration of 5 nage-no-kata type throws, linked together on the move", "Randori", "3 consecutive osaekomi with 5 escapes, in sequence"], techniques: "orange",
       },
       {
         id: "c-orange-8", belt: "orange", grade: "4th kyu", name: "orange belt", age: "8 years", minimum: "1 year", stage: "Learning",
@@ -166,14 +166,14 @@ export const TRACKS: readonly Track[] = [
         objectives: ["Mobility and technical sequences", "Assisting the teacher", "Supporting less experienced judoka", "Introduction to self-defence"],
         focus: ["Learning 4 throws", "Improving osaekomi, half the holds"],
         exercises: GREEN_EXERCISES,
-        examination: [SELF_DEFENCE_STRIKES, "Demonstration of 4 nage-no-kata type throws, linked together on the move", "9 consecutive osaekomi with escapes, in sequence"], techniques: "green",
+        examination: [SELF_DEFENCE_STRIKES, "Demonstration of 4 nage-no-kata type throws, linked together on the move", "7 consecutive osaekomi with 9 escapes, in sequence"], techniques: "green",
       },
       {
         id: "c-green", belt: "green", grade: "3rd kyu", name: "green belt", age: "9 years", minimum: "1 year", stage: "Personal expression",
         objectives: ["Working on favourite techniques (tokui-waza)", "Starting to prepare for 1st dan", "Shiai, technique and culture", "Self-defence fundamentals"],
         focus: ["Learning 8 throws", "Improving osaekomi, half the holds"],
         exercises: GREEN_EXERCISES,
-        examination: [SELF_DEFENCE_STRIKES, "Nage-no-Kata, set 1", "4-throw sequence moving in suri-ashi", "11 consecutive osaekomi with escapes, in sequence"], techniques: "green",
+        examination: [SELF_DEFENCE_STRIKES, "Nage-no-Kata, set 1", "4-throw sequence moving in suri-ashi", "9 consecutive osaekomi with 11 escapes, in sequence"], techniques: "green",
       },
       {
         id: "c-blue-10", belt: "green-blue", grade: "2nd kyu", name: "green-blue belt", age: "10½ years", minimum: "1 year",
