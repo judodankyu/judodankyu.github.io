@@ -171,7 +171,7 @@ export const TRACKS: readonly Track[] = [
       {
         id: "c-green", belt: "green", grade: "3rd kyu", name: "green belt", age: "9 years", minimum: "1 year", stage: "Personal expression",
         objectives: ["Working on favourite techniques (tokui-waza)", "Starting to prepare for 1st dan", "Shiai, technique and culture", "Self-defence fundamentals"],
-        focus: ["Learning 8 nage-waza techniques", "Improving osaekomi-waza"],
+        focus: ["Learning nage-waza techniques while moving", "Osaekomi-waza improvement"],
         exercises: GREEN_EXERCISES,
         examination: [SELF_DEFENCE_STRIKES, "Nage-no-Kata, set 1", "4 nage-waza sequence moving in suri-ashi", "9 consecutive osaekomi-waza with 11 escapes, in sequence"], techniques: "green",
       },
@@ -179,12 +179,12 @@ export const TRACKS: readonly Track[] = [
         id: "c-blue-10", belt: "green-blue", grade: "2nd kyu", name: "green-blue belt", age: "10½ years", minimum: "1 year",
         objectives: BLUE_OBJECTIVES, focus: ["Learning half of the nage-waza techniques", "Introduction to shime-waza and gatame-waza: technique only, not in randori"],
         exercises: ["Refereeing", "Physical preparation", "Tandoku-renshu", "Tachi-waza and ne-waza sequences"],
-        examination: [...BLUE_EXAM_THROWS, "2 shime-waza and 2 gatame-waza in a row"], techniques: "blue",
+        examination: [...BLUE_EXAM_THROWS.slice(0, 2), "6 nage-waza sequence moving in suri-ashi", "2 shime-waza and 2 gatame-waza in a row"], techniques: "blue",
       },
       {
         id: "c-blue-12", belt: "blue", grade: "2nd kyu", name: "blue belt", age: "12 years", minimum: "1 year",
         objectives: ["Tokui-waza sequences, action and reaction", BLUE_OBJECTIVES[0]!, "Supervised tasks delegated by the teacher", BLUE_OBJECTIVES[1]!],
-        focus: ["Further training in all the nage-waza techniques", "Introduction to shime-waza and gatame-waza: technique only, not in randori"],
+        focus: ["Further training in the nage-waza techniques", "Introduction to shime-waza and gatame-waza: technique only, not in randori"],
         exercises: ["Shiai", "Refereeing practice", "Explaining a technique", "Mondo (questions and answers)", "Tandoku-renshu (tokui-waza)"],
         examination: [...BLUE_EXAM_THROWS, "6 shime-waza and 3 gatame-waza in a row"], techniques: "blue",
       },
