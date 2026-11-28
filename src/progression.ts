@@ -68,8 +68,8 @@ const BROWN: Omit<Step, "id" | "age" | "focus"> = {
 
 /** Dan grades: the programme lists only the techniques to demonstrate. */
 const DANS: readonly Step[] = [
-  { id: "black-1", belt: "black-1", grade: "1st dan", name: "black belt", objectives: [], focus: ["Demonstration of the 1st dan throws and strangles"], exercises: [], examination: [], techniques: "black-1" },
-  { id: "black-2", belt: "black-2", grade: "2nd dan", name: "black belt", objectives: [], focus: ["Demonstration of the 2nd dan throws, Do-jime and Ashi-garami"], exercises: [], examination: [], techniques: "black-2" },
+  { id: "black-1", belt: "black-1", grade: "1st dan", name: "black belt", objectives: [], focus: ["Demonstration of the 1st dan throws and shime-waza"], exercises: [], examination: [], techniques: "black-1" },
+  { id: "black-2", belt: "black-2", grade: "2nd dan", name: "black belt", objectives: [], focus: ["Demonstration of the 2nd dan throws, shime-waza and kansetsu-waza"], exercises: [], examination: [], techniques: "black-2" },
 ];
 
 export const TRACKS: readonly Track[] = [
@@ -103,14 +103,14 @@ export const TRACKS: readonly Track[] = [
         techniques: "green",
       },
       {
-        id: "blue", belt: "blue", grade: "2nd kyu", name: "blue belt", age: "from 13 years", minimum: "1 year", stage: "Refereeing",
+        id: "blue", belt: "blue", grade: "2nd kyu", name: "blue belt", age: "from 13 years", minimum: "1 year",
         objectives: ["Tokui-waza sequence and action reaction", "Adjust to children's objectives (competition, refereeing, teaching, leisure)", "In-depth learning of self-defence"],
         focus: ["Learning the throws", "The 8 strangles of the grade"],
         exercises: ["Refereeing", "Physical preparation", "Tandoku-renshu (tokui-waza)", "Tachi-waza and ne-waza sequence"],
         examination: ["Self-defence with collar and sleeve grips, using judo techniques", "Nage-no-Kata, 2nd series", "12-technique sequence moving in suri-ashi", "6 shime-waza and 3 gatame-waza in a row"],
         techniques: "blue",
       },
-      { belt: "brown", grade: "1st kyu", name: "brown belt", minimum: "1 year", stage: "Supporting judo training", id: "brown", age: "from 14 years", objectives: ["Preparation for 1st dan", "Proficiency in self-defence"], focus: ["Learning 100% of techniques", "The 10 groundwork techniques of the grade"], exercises: ["Support for judo training", "Refereeing", "Coaching", "Running a refereeing table", "Shiai"], examination: ["Self-defence from kicking, with judo techniques", "Nage-no-Kata, 3rd series", "12-technique sequence moving in suri-ashi", "Katame-no-Kata: osaekomi series"], techniques: "brown" },
+      { belt: "brown", grade: "1st kyu", name: "brown belt", minimum: "1 year", id: "brown", age: "from 14 years", objectives: ["Preparation for 1st dan", "Proficiency in self-defence"], focus: ["Learning techniques", "The 10 groundwork techniques of the grade"], exercises: ["Support for judo training", "Refereeing", "Coaching", "Running a refereeing table", "Shiai"], examination: ["Self-defence from kicking, with judo techniques", "Nage-no-Kata, 3rd series", "12-technique sequence moving in suri-ashi", "Katame-no-Kata: osaekomi series"], techniques: "brown" },
       ...DANS,
     ],
   },
