@@ -544,6 +544,7 @@
   }
 
   .step-tech { margin-top: .875rem; font-size: .875rem; & a { color: var(--link); } }
+  .step-cols a { color: var(--link); font-weight: 600; }
 
   @media (width < 60rem) {
     .step-cols { grid-template-columns: 1fr 1fr; }
