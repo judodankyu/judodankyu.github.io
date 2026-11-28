@@ -4,3 +4,4 @@ dist/
 .impeccable/mocks/
 .claude/settings.local.json
 .build/
+Claude outputs/
