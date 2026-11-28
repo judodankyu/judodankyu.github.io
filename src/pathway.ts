@@ -9,6 +9,12 @@ if (main) {
     if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: "instant" });
   }
 
+  /* Keep the age-track switch below the sticky header, whatever the header's height on this screen. */
+  const bar = document.querySelector<HTMLElement>(".bar");
+  const fitBar = () => document.documentElement.style.setProperty("--bar-h", `${bar?.offsetHeight ?? 0}px`);
+  fitBar();
+  if (bar) new ResizeObserver(fitBar).observe(bar);
+
   /* Tint the step that crosses a line just above the middle of the screen, as the reader scrolls. */
   main.classList.add("tracking");
   const steps = [...main.querySelectorAll<HTMLElement>(".step")];

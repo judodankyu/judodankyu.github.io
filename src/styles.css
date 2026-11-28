@@ -483,13 +483,19 @@
 
   .pathway { max-width: var(--page); margin-inline: auto; padding-inline: var(--gutter); }
 
+  /* Stays under the sticky header while the reader scrolls, so the age track is always one click away. */
   .track-switch {
-    display: inline-flex;
+    display: flex;
+    width: fit-content;
+    position: sticky;
+    top: var(--bar-h, 0px);
+    z-index: 4;
     gap: 2px;
     margin: 1.5rem 0 0;
     padding: 3px;
     border: 1px solid var(--line);
     border-radius: 999px;
+    background: var(--bg);
     & input { position: absolute; opacity: 0; pointer-events: none; }
     & label { padding: .375rem 1rem; border-radius: 999px; font-size: .875rem; color: var(--muted); cursor: pointer; }
     & label:hover { color: var(--ink); }
@@ -528,6 +534,7 @@
   /* The step being read is softly tinted in its belt colour: the one in the middle of the screen,
      or, without JavaScript, the one a link from the main page arrived at. */
   .step[aria-current],
+  .step:hover,
   .pathway:not(.tracking) .step:target { background: color-mix(in oklab, var(--mark) 9%, var(--bg)); }
 
   .step-meta { margin-top: .25rem; font-size: .875rem; color: var(--muted); }
