@@ -81,16 +81,16 @@ export const TRACKS: readonly Track[] = [
       {
         id: "yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "from 12 years", minimum: "6 months from white", stage: "Learning",
         objectives: ["Safe practice", "Judo fundamentals", "Games of opposition", "Ne-waza and tachi-waza"],
-        focus: ["Learning 6 throws on the move", "Learning osaekomi"],
-        exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Mae-mawari-ukemi from a low position", "Tsugi-ashi in 4 directions", "Ne-waza: escaping osaekomi, turning over, freeing a trapped leg"],
-        examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "Randori", "Ne-waza"],
+        focus: ["Learning 6 tachi-waza in movement: Tai-otoshi, Uki-goshi, Hiza-guruma, O-uchi-gari, Ko-uchi-gari, O-soto-otoshi", "Learning osaekomi: kuzure-kesa-gatame, yoko-shiho-gatame"],
+        exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Mae-mawari-ukemi (from low position)", "Tsugi-ashi in 4 directions", "Ne-waza practice: escaping osaekomi, returning, turning over, freeing a trapped leg"],
+        examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "Randori", "2 osaekomi with 3 escapes, freeing a trapped leg in a sequence"],
         techniques: "yellow",
       },
       {
         id: "orange", belt: "orange", grade: "4th kyu", name: "orange belt", age: "from 12 years", minimum: "1 year", stage: "Learning",
-        objectives: ["Technical improvement", "Confidence in ukemi", "Randori and uchi-komi", "Introduction to refereeing"],
+        objectives: ["Technical improvement", "Confidence in ukemi", "Randori, uchi-komi and kagari-geiko", "Introduction to refereeing"],
         focus: ["Learning 9 throws on the move", "Improving osaekomi"],
-        exercises: ["Falling from standing", "Confidence building", "Ne-waza randori", "Yakusoku-geiko", "Tachi-waza randori", "Shiai"],
+        exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Confidence building", "Ne-waza randori", "Yakusoku-geiko", "Tachi-waza randori", "Shiai"],
         examination: [...ORANGE_EXAM.slice(0, 1), "Club shiai with refereeing", "Randori", "5 consecutive osaekomi with escapes, in sequence"],
         techniques: "orange",
       },
@@ -145,9 +145,9 @@ export const TRACKS: readonly Track[] = [
       },
       {
         id: "c-yellow", belt: "yellow", grade: "5th kyu", name: "yellow belt", age: "6 years", minimum: "6 months", stage: "Learning",
-        objectives: ["Games and technique", "Opposition in combat in safe conditions"], focus: ["6 throws on the move", "Introduction to osaekomi"],
-        exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Preparing the yellow-belt demonstration", "Ne-waza: escaping osaekomi, turning over"],
-        examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "3 escapes from osaekomi", "2 osaekomi in sequence"], techniques: "yellow",
+        objectives: ["Games and technique", "Opposition in combat in safe conditions"], focus: ["Further training: 6 tachi-waza in movement: Tai-otoshi, Uki-goshi, Hiza-guruma, O-uchi-gari, Ko-uchi-gari, O-soto-otoshi", "Osaekomi initiation"],
+        exercises: ["Falling with tori: mae, ushiro and yoko-ukemi", "Preparation of the technical presentation for yellow belt", "Ne-waza practice: escaping osaekomi, returning"],
+        examination: ["Demonstration of 6 nage-no-kata type throws, linked together on the move", "3 techniques to escape osaekomi", "3 techniques in sequence"], techniques: "yellow",
       },
       {
         id: "c-orange-7", belt: "yellow-orange", grade: "4th kyu", name: "yellow-orange belt", age: "7 years", minimum: "1 year", stage: "Learning",
@@ -157,9 +157,9 @@ export const TRACKS: readonly Track[] = [
       },
       {
         id: "c-orange-8", belt: "orange", grade: "4th kyu", name: "orange belt", age: "8 years", minimum: "1 year", stage: "Learning",
-        objectives: ORANGE_YOUNG_OBJECTIVES, focus: ["Learning up to 9 throws", "Improving osaekomi, half the holds"],
-        exercises: ["Falling from standing", "Confidence building", "Moving sequences", "Tachi-waza and ne-waza", "Sequences from escaping osaekomi"],
-        examination: ORANGE_EXAM, techniques: "orange",
+        objectives: ORANGE_YOUNG_OBJECTIVES, focus: ["Learning up to 5 throws", "Improving osaekomi, half the holds"],
+        exercises: ["Falling from standing: mae, ushiro and yoko-ukemi", "Confidence building", "Moving sequences", "Tachi-waza and ne-waza", "Sequences from escaping osaekomi"],
+        examination: ["Demonstration of 5 nage-no-kata type throws, linked together on the move", "Randori", "7 consecutive osaekomi with escapes, in sequence"], techniques: "orange",
       },
       {
         id: "c-orange-green", belt: "orange-green", grade: "3rd kyu", name: "orange-green belt", stage: "Personal expression",
